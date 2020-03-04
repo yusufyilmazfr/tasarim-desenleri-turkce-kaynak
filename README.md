@@ -17,17 +17,19 @@
      - [Inheritance (Kalıtım)]()
      - [Polymorphism (Çok Biçimlilik)]()
    - [Nesneler Arası İlişkiler]()
+     - [Inheritance (Kalıtım)]()
+     - [Implementation]()
      - [Association (Bağlantı)]()
      - [Dependency (Bağımlılık)]()
      - [Composition(Bileşim)]()
      - [Aggregation(İçerme)]()
-3. [Tasarım Deseni Nedir?]()
-4. [S.O.L.I.D Nedir?]()
-   - [Single Responsibility]()
-   - [Open/Closed]()
-   - [Liskov Substitution]()
-   - [Interface Segregation]()
-   - [Dependency Inversion]()
+3. [S.O.L.I.D Nedir?]()
+   - [Single Responsibility (Tek Sorumluluk Prensibi)]()
+   - [Open/Closed Principle (Açık Kapalı Prensibi)]()
+   - [Liskov Substitution (Liskov’un Yerine geçme Prensibi)]()
+   - [Interface Segregation (Arayüz Ayrımı Prensibi)]()
+   - [Dependency Inversion (Bağımlılıkların Tersine Çevrilmesi Prensibi)]()
+4. [Tasarım Deseni Nedir?]()
 5. [Tasarım Desenleri]()
    - [Creational  (Oluşturucu)]()
    - [Structural (Yapısal)]()
@@ -139,7 +141,7 @@ Bu kısımda kaynağın herkese hitap etmesi açısından temel düzeyde de olsa
 
 ![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-inheritance.png)
 
-Sınıflar arası kalıtımı gösterir.
+Sınıflar arası kalıtımı gösterir. Alt sınıftan üst sınıfa doğru içi boş ok ile gösterilir.
 
 #### Implementation
 
@@ -171,10 +173,327 @@ Bütünlük sağlar, bir sınıf veya sınıfların diğer bir sınıfın parça
 
 Bütünlük sağlar, bir sınıf veya sınıfların diğer bir sınıfın parçası olduğu anlamı çıkar. **Parçalar tek başlarına bir anlam taşıyabilirler**. Yukarıdaki örneğe bakılacağı zaman havalimanı uçakları içerir, ayrılma durumu olabilir, sıkı sıkıya bağımlılık yoktur, uçak tek başına bir anlam ifade edebilir.
 
+## S.O.L.I.D Nedir?
+
+> S.O.L.I.D, yazılım geliştirirken sürdürülebilir kod yazmamızı sağlayan bir prensiptir. 
+
+Buradaki sürdürülebilirlikten kasıt; yazılım gereksinimleri değiştiğinde ya da mevcut yazılıma eklemeler yapıldığında sistemin buna direnç göstermemesi, en azından en az direnci göstermesi yani esnek olmasıdır. Bunların yanı sıra bakımının ve anlaşılmasının kolay olması gibi nedenler de sayılabilir.
+
+Bunları yapmamızı sağlayan prensipleri 5 madde içerisinde inceleyeceğiz.
+
+
+
+### Single Responsibility Principle (Tek Sorumluluk Prensibi)
+
+> Her sınıf, metot, fonksiyon tek bir sorumluluğa sahip olmalıdır.
+
+Şayet bu kurala uymazsak ilerleyen süreçte bir değişikliğe gidildiğinde bunun etkisini birçok yerde görmüş oluruz. Nedeni ise bir yapıya birden fazla sorumluluk yüklenmesinden dolayıdır. Eğer değişikliklerden etkilenen yerler arasında sistemin birçok yerinde kullanılan bir yapımız da varsa maliyet gittikçe artacaktır.   
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/single-res-person.png)
+
+JAVA Kod Örneği:
+
+```java
+public class Person {
+    public String firstName;
+
+    public void sendPasswordResetLink() {
+        ...
+    }
+}
+```
+
+Yukarıdaki diyagrama ve koda baktığımızda `Person` sınıfı içerisinde `sendPasswordResetLink()` diye bir metot bulunmaktadır. Bu sınıfın asıl amacı kişilere ait bilgileri tutmaktır, şifre sıfırlama bağlantısı göndermek değil. Birden fazla sorumluluk yüklendiği için olası bir mail gönderme değişikliğinde bu sınıf da etkilenecektir.
+
+Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir.
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/single-res-person-2.png)
+
+JAVA Kod Örneği:
+
+```java
+class Person {
+     public String firstName;
+}
+
+class EmailService {
+    public void sendPasswordResetLink(Person person) {
+        ...
+    }
+}
+```
+
+### Open/Closed Principle (Açık Kapalı Prensibi)
+
+> Yapılarımız (sınıf, metot, fonksiyon) gelişime açık değişime kapalı olmalıdır.
+
+Yazılımlar için zamanla değişim şüphesiz kaçınılmazdır; değişen iş kuralları, kullanılan harici kütüphaneler gibi başlıca nedenler örnek gösterilebilir. Bu prensibin anlatmak istediği şey **yeni bir davranış ya da özellik eklemek istediğimiz durumda; yapmak istediğimiz değişikliği mevcut koda dokunmadan, değişimi sadece yeni kodlar üzerinden sağlamaktır.**
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/open-closed.png)
+
+JAVA Kod Örneği:
+
+```java
+class Employee {
+    ...
+}
+
+class EmployeeManager {
+    public void addEmployee(Object database, Employee employee) {
+        if (database instanceof OracleDatabase) {
+            ((OracleDatabase) database).addDatabase(employee);
+        }
+    }
+}
+
+class OracleDatabase {
+    public void addDatabase(Employee employee) {
+        ...
+    }
+}
+```
+
+Yukarıdaki koda ve diyagrama baktığımız zaman `EmployeeManager` adında bir sınıfımız mevcut ve gelen `Employee` sınıfına ait nesneyi veri tabanına kayıt ediyor. Veri tabanına kayıt etmeden önce hangi veri tabanı örneği geldiğini de `if-else` durumlarında kotrol edip tip dönüşümü sağlamaktadır. Yukarıdaki kod örneği maalesef `Open-Closed` için uygun değildir. Nedeni ise yeni bir veri tabanı eklenmek istediğinde başka bir `if-else` durumu açılacaktır, yeni eklenen veri tabanı kontrolü sağlanacaktır ve sürekli mevcut koda bir müdahalede bulunulacaktır. **Bunu çözmenin yolu ise genelde soyutlamadan geçmektedir.**
+
+Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. Yeni bir eklemede mevcut koda kodunmaya gerek kalmıyor bu sayede. Kayıt işlemlerini `MySQL` üzerinde yapmak istediğimiz zaman `MySQLDatabase` adında bir sınıf oluşturup `IDatabase` arayüzünü uygulamamız yeterlidir. 🥰
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/open-closed-2.png)
+
+JAVA Kod Örneği:
+
+```java
+class Employee { 
+...
+}
+
+interface IDatabase {
+    void addDatabase(Employee employee);
+}
+
+class EmployeeManager {
+    public void addEmployee(IDatabase database, Employee employee) {
+        database.addDatabase(employee);
+    }
+}
+
+class OracleDatabase implements IDatabase {
+    @Override
+    public void addDatabase(Employee employee) {
+       ...
+    }
+}
+```
+
+### Liskov Substitution Principle (Liskov’un Yerine geçme Prensibi)
+
+> Alt sınıflardan oluşan nesnelerin, üst sınıfın nesneleri ile yer değiştirdiklerinde aynı davranışı sergilemesi gerekmektedir.
+
+
+
+Alt sınıflar, üst sınıflardan türediği için onların davranışlarını devralırlar. Eğer üst sınflara ait davranışları gerçekleştirmiyorlarsa davranışı yapan metotu muhtemelen boş bırakır ya da bir hata fırlatırız fakat bu işlemler kod kirliliğine ve gereksiz kod kalabalığına neden olmaktadır. Bunların yanı sıra projeye daha sonradan dahil olacak geliştiriciler için de sorun oluşturmaktadır. Geliştirici, sistemin sağlıklı yürüdüğünü düşünerek gerçekleştirilmeyen bir davranışı kullanmaya çalışabilir.
+
+
+
+====> BURAYA ÖRNEK GELECEK <======
+
+
+
+### Interface Segregation Principle (Arayüz Ayrımı Prensibi)
+
+> Sınıflar, kullanmadığı metotları içeren arayüzleri uygulamaya zorlanmamalıdır. 
+
+
+
+Arayüzlerimizde genel olarak birçok operasyonel işlem barındırabiliriz fakat bu arayüzü uygulayan sınıfların, bazılarını kullanmama durumu olabilmektedir. **Bir sınıf birden fazla arayüzü uygulaması özelliğiyle de bitlikte bu prensip, bu tür durumlarda arayüzlerin ayrılmasını ve ihtiyaç halinde olanların kullanmasını söylemektedir**. 
+
+
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/interface-segre.png)
+
+JAVA Kod Örneği:
+
+```java
+interface IWorker {
+    void eat() throws Exception;
+
+    void work();
+
+    void pay() throws Exception;
+}
+
+class RobotWorker implements IWorker {
+
+    @Override
+    public void eat() throws Exception {
+        throw new Exception();
+    }
+
+    @Override
+    public void pay() throws Exception {
+        throw new Exception();
+    }
+
+    @Override
+    public void work() {
+      ...
+    }
+}
+```
+
+Yukarıdaki diyagram incelendiğinde, şirket çalışanları `IWorker` arayüzünü uygulamaktadır; yemek yeme, ödeme alma, çalışma gibi davranışları gerçekleştirmektedir. Fakat daha sonradan bazı işler robotlar tarafından yapılmaya başlandı ya da dış kaynaktan birileri(outsource) de çalışmaya başladı. Bu durumda bazı davranışlar gerçekleşmeyecektir. Örneğin robotların yemek yeme ya da ödeme alma davranışını gerçekleştirememesi gibi ya da dış kaynaktan gelenlere verilmeyen yemek imkanı. Bu gerçekleşmeyen davranışların içlerini ya boş bırakma ya da hata fırlatma durumunda kalırız. **Bu tür durumlarda bu prensip bizlere bu arayüzlerin ayrılmasını ve ihtiyaç halinde olanların kullanılmasını söylemektedir.**
+
+
+
+Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. `work()`, `pay()`, `eat()` davranışları başka arayüzlere aktarıldı ve ihtiyaç halinde olanlar uygulandı.
+
+
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/interface-segre-2.png)
+
+
+
+JAVA Kod Örneği:
+
+```java
+interface IWorker {
+    void work();
+}
+
+interface IEatableWorker {
+    void eat();
+}
+
+interface IPayableWorker {
+    void pay();
+}
+
+class Worker implements IWorker, IEatableWorker, IPayableWorker {
+
+    @Override
+    public void eat() {
+        ...
+
+    }
+
+    @Override
+    public void work() {
+        ...
+
+    }
+
+    @Override
+    public void pay() {
+        ...
+
+    }
+}
+
+class RobotWorker implements IWorker {
+    @Override
+
+    public void work() {
+     ...
+    }
+}
+```
+
+
+
+### Dependency Inversion Principle (Bağımlılıkların Tersine Çevrilmesi Prensibi)
+
+> Yüksek seviye sınıflar, düşük seviye sınıflara bağlı olmamalıdır. Her ikisi de soyutlamalara bağlı olmalıdır.
+> 
+> Soyutlamalar, detaylara bağlı olmamalıdır.  Detaylar, soyutlamalara bağlı olmalıdır.
+
+
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/dependency-inv.png)
+
+
+
+JAVA Kod Örneği:
+
+```java
+class ExceptionReporter {
+    private OracleDatabase oracleDatabase;
+
+    public ExceptionReporter() {
+        oracleDatabase = new OracleDatabase();
+    }
+
+    public void reportException(Exception exception) {
+        oracleDatabase.add(exception);
+    }
+}
+
+class OracleDatabase {
+    public void add(Object object) {
+        System.out.println("added :D");
+    }
+}
+```
+
+Yukarıdaki diyagram ve kod incelendiğinde `ExceptionReporter`  sınıfının (yüksek seviyeli sınıf), `OracleDatabase` sınıfına (düşük seviyeli sınıf) direkt olarak bağımlı olduğu görülmektedir. İleride veri tabanı olarak Oracle değil de MySQL kullanmak istersek maalesef bu sınıfa müdahale etmek zorunda kalacağız. Bu istenmeyen bir davranıştır. Bunun çözümünü ise buradaki **bağımlılıkları soyutlayarak** sağlayacağız.
+
+
+
+Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir.
+
+
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/dependency-inv-2.png)
+
+
+
+```java
+class ExceptionReporter {
+    private IDatabase database;
+
+    public ExceptionReporter(IDatabase database) {
+        this.database = database;
+    }
+
+    public void reportException(Exception exception) {
+        database.add(exception);
+    }
+}
+
+interface IDatabase {
+    void add(Object object);
+}
+
+class MySQLDatabase implements IDatabase {
+    @Override
+    public void add(Object object) {
+        ...
+    }
+}
+
+class OracleDatabase implements IDatabase {
+    @Override
+
+    public void add(Object object) {
+        ...
+    }
+}
+```
+
+
+
+## Tasarım Deseni Nedir?
+
+Tasarım desenleri; yazılım tasarımında, problemlerde karşımıza sıkça çıkan ortak sorunları çözmek için oluşturulmuş desenlerdir. Tasarım desenleri, yazılım sürecinde uygulanan çözümlerin esnekliği ve tekrar kullanılabilirliği ile de ilgilenmektedir.
+
+
+
+*Her desen, çevremizde tekrar tekrar ortaya çıkan bir sorunu açıklar ve daha sonra bu soruna çözümün uygulanmasını, bu çözümü iki kez aynı şekilde yapmadan milyonlarca kez kullanabileceğiniz şekilde tanımlar.*
+
+—Christopher Alexander
+
 # Kaynakçalar
 
 - [https://tr.wikipedia.org/wiki/Nesne_y%C3%B6nelimli_programlama](https://tr.wikipedia.org/wiki/Nesne_y%C3%B6nelimli_programlama)
 - [https://tr.wikipedia.org/wiki/%C3%87ok_bi%C3%A7imlilik](https://tr.wikipedia.org/wiki/%C3%87ok_bi%C3%A7imlilik)
 - [https://tr.wikipedia.org/wiki/Kaps%C3%BClleme](https://tr.wikipedia.org/wiki/Kaps%C3%BClleme)
 - [https://medium.com/@atarikguney/abstraction-ve-encapsulation-tam-olarak-nedir-27b9aae99e56](https://medium.com/@atarikguney/abstraction-ve-encapsulation-tam-olarak-nedir-27b9aae99e56)
-- 
+- [Engin Demiroğ, Canlı Yayın - SOLID Yazılım Geliştirme Prensipleri](https://www.youtube.com/watch?v=JldZhDSvBBQ)
