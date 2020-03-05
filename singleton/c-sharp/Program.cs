@@ -11,7 +11,7 @@ namespace Singleton
 
             bool isEquals = firstInstanceRequest == secondInstanceRequest;
 
-            Console.WriteLine($"Database reference is equals: {isEquals}"); //output: Database reference is equals: True
+            Console.WriteLine($"Database referance is equals: {isEquals}"); //output: Database referance is equals: True
         }
     }
 }

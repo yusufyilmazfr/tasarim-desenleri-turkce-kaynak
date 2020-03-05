@@ -7,6 +7,6 @@ public class App {
 
         Boolean isEquals = firstInstanceRequest == secondInstanceRequest;
 
-        System.out.printf("Database reference is equals: %b", isEquals); //output: Database reference is equals: true
+        System.out.printf("Database referance is equals: %b", isEquals); //output: Database referance is equals: true
     }
 }
