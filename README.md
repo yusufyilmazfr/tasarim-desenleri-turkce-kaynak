@@ -277,7 +277,7 @@ class OracleDatabase {
 
 Yukarıdaki koda ve diyagrama baktığımız zaman `EmployeeManager` adında bir sınıfımız mevcut ve gelen `Employee` sınıfına ait nesneyi veri tabanına kayıt ediyor. Veri tabanına kayıt etmeden önce hangi veri tabanı örneği geldiğini de `if-else` durumlarında kotrol edip tip dönüşümü sağlamaktadır. Yukarıdaki kod örneği maalesef `Open-Closed` için uygun değildir. Nedeni ise yeni bir veri tabanı eklenmek istediğinde başka bir `if-else` durumu açılacaktır, yeni eklenen veri tabanı kontrolü sağlanacaktır ve sürekli mevcut koda bir müdahalede bulunulacaktır. **Bunu çözmenin yolu ise genelde soyutlamadan geçmektedir.**
 
-Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. Yeni bir eklemede mevcut koda kodunmaya gerek kalmıyor bu sayede. Kayıt işlemlerini `MySQL` üzerinde yapmak istediğimiz zaman `MySQLDatabase` adında bir sınıf oluşturup `IDatabase` arayüzünü uygulamamız yeterlidir. 🥰
+Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. Yeni bir eklemede mevcut koda dokunmaya gerek kalmıyor bu sayede. Kayıt işlemlerini `MySQL` üzerinde yapmak istediğimiz zaman `MySQLDatabase` adında bir sınıf oluşturup `IDatabase` arayüzünü uygulamamız yeterlidir. 🥰
 
 ![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/open-closed-2.png)
 
@@ -568,7 +568,7 @@ Database secondInstanceRequest = Database.GetInstance();
 firstInstanceRequest == secondInstanceRequest // true
 ```
 
-Desenin yukarıdaki durumu geçerli gibi duruyor fakat multi-thread uygulamalarda nesnenin daha örneğinin oluşmadığı esnada `if (database == null)` durumuna aynı anda birden fazla thread giribilir, bu sayede de o sınıfa ait birden fazla nesne örneği bulunur. Bu kısmı iyileştirme yolunda dillerin bize sağladığı yapıları kullanabiliriz. C# dilinde `lock` ile JAVA dili için de `synchronized` sayesinde aynı anda sadece bir yapının erişmesini sağlarız. 
+Desenin yukarıdaki durumu geçerli gibi duruyor fakat multi-thread uygulamalarda nesnenin daha örneğinin oluşmadığı esnada `if (database == null)` durumuna aynı anda birden fazla thread girebilir, bu sayede de o sınıfa ait birden fazla nesne örneği bulunur. Bu kısmı iyileştirme yolunda dillerin bize sağladığı yapıları kullanabiliriz. C# dilinde `lock` ile JAVA dili için de `synchronized` sayesinde aynı anda sadece bir yapının erişmesini sağlarız. 
 
 C# dili için `GetInstance()` metotunu düzenleyecek olursak aşağıdaki hali alacaktır.
 
@@ -592,7 +592,96 @@ public static Database GetInstance()
 }
 ```
 
- *Bu tasarım deseninin JAVA için olan uygulanmasını örnekler klasöründe bulabilirsiniz.*
+  *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
+
+
+#### 🏭 Factory
+
+> Factory tasarım deseni birbirleri ile ilişkili nesneleri oluşturmak için bir arayüz sağlar ve alt sınıfların hangi sınıfın örneğini oluşturacağına olanak sağlar. 
+
+
+
+Buradaki amaç istemci tarafından birbirleri ile ilişkili nesnelerin oluşturulma anını soyutlamak, **istemci hangi sınıf örneğini alabileceğini bilebilir ama oluşturulma detayları bilmez**. Detaylar yani nesnenin nasıl oluşturulacağı soyutlanır. Örneğin oluşturulan sınıfın `Singleton` olarak oluşturulması gibi.
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/factory-pattern.png)
+
+
+
+C# Kod Örneği:
+
+```csharp
+public class User
+{
+    // Burada bildirimin gideceği kullanıcıya
+    // ait bilgiler bulunacaktır.
+}
+
+// UML diyagramındaki IProduct arayüzümüze denk gelmektedir.
+// İlişkili sınıflarımız bu arayüzü uygulayacaktır.
+interface INotify
+{
+    void SendNotification(User user);
+}
+
+// UML diyagramındaki ConcreteProduct sınıflarına denk gelmektedir.
+class MailNotify : INotify
+{
+    public void SendNotification(User user)
+    {
+        // Mail gönderme operasyonu.
+    }
+}
+
+// UML diyagramındaki ConcreteProduct sınıflarına denk gelmektedir.
+public class SmsNotify : INotify
+{
+    public void SendNotification(User user)
+    {
+        // SMS gönderme operasyonu.
+    }
+}
+
+// UML diyagramındaki ProductFactory sınıfına denk gelmektedir.
+class NotifyFactory
+{
+    public INotify CreateNotify(string notifyType)
+    {
+        if (notifyType == "SMS")
+        {
+            // Buradaki nesne oluşturma süreçleri bize kalmıştır.
+            // Kullanıcıdan soyutlanmıştır.
+            // Örnek olarak burası Singleton olarak da ayarlanabilirdi.
+            return new SmsNotify();
+        }
+        else if (notifyType == "MAIL")
+        {
+            // Buradaki nesne oluşturma süreçleri bize kalmıştır.
+            // Kullanıcıdan soyutlanmıştır.
+            // Örnek olarak burası Singleton olarak da ayarlanabilirdi.
+            return new MailNotify();
+        }
+        return null;
+    }
+}
+```
+
+
+
+```csharp
+NotifyFactory notifyFactory = new NotifyFactory();
+
+INotify notify = notifyFactory.CreateNotify("MAIL");
+
+notify.SendNotification(new User());
+```
+
+
+
+Yukarıdaki kodda da görüldüğü gibi `INotify` arayüzünü uygulayan sınıfların oluşturulması istemciden soyutlanmıştır.
+
+
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
 
 
