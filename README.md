@@ -676,12 +676,192 @@ INotify notify = notifyFactory.CreateNotify("MAIL");
 notify.SendNotification(new User());
 ```
 
-
-
 Yukarıdaki kodda da görüldüğü gibi `INotify` arayüzünü uygulayan sınıfların oluşturulması istemciden soyutlanmıştır.
 
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
+
+#### 🏭🏭 Abstract Factory
+
+> Abstract Factory tasarım deseni birbirleri ile ilişkili ürün ailesini oluşturmak için bir arayüz sağlar.
+
+
+
+Factory tasarım deseninde bir ürünün oluşturulması soyutlanmış iken Abstract Factory deseninde birbirleri ile ilişkili ürün ailelerininin oluşturulması soyutlanmıştır. **Factory üreten Factory deseni olarak da düşünülebilir.** 🧐
+
+
+
+Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığımız durumlarda, istemciyi bu yapılardan soyutlamak için Abstract Factory doğru bir yaklaşım olacaktır.
+
+
+
+![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/abstract-factory-uml.png)
+
+**ProductA**, **ProductB**: Temel sınıflarımız, soyuttur ve oluşturulmasını istediğimiz sınıflar bunlardan türer.
+
+**ConcreteProduct**: Üretmek istediğimiz sınıflardır.
+
+**AbstractFactory**: Herbir sınıfın oluşturulması için metotların tanımlandığı arayüzdür.
+
+**ConcreteFactory**: `AbstractFactory` arayüzünü uygulayarak gerekli sınıfların oluşturulmasını sağlar.
+
+
+
+Şöyle bir senaryo düşünülebilir; sistemimiz isteğe bağlı Oracle ya da MySQL için sorgu çalıştırabilir olsun. Bu işlemler için temel olarak da bağlantının açılması, kapatılması ve sorgunun çalıştırılması gerekli olduğu varsayalım.  Bu işlemler direkt olarak herbiri Factory desen olarak ayarlanabilir ama birbirleri ile ilişkili aileden geldikleri için bu desene daha sağlıklı olacaktır. 
+
+
+
+C# Kod Örneği:
+
+
+
+```csharp
+// Soyut sınıfımızdır.
+// UML'deki Product sınıfına denk gelmektedir.
+public abstract class Command
+{
+    public abstract void ExecuteCommand(string query);
+}
+
+// Command sınıfından türer.
+// UML'deki ConcreteProduct sınıfına denk gelmektedir.
+class MySQLCommand : Command
+{
+    public override void ExecuteCommand(string query)
+    {
+        // Gelen sorgunun çalıştırılması için
+        // Gerekli operasyonel işlemler...
+    }
+}
+
+// Command sınıfından türer.
+// UML'deki ConcreteProduct sınıfına denk gelmektedir.
+class OracleCommand : Command
+{
+    public override void ExecuteCommand(string query)
+    {
+        // Gelen sorgunun çalıştırılması için
+        // Gerekli operasyonel işlemler...
+    }
+}
+
+// Soyut sınıfımızdır.
+// UML'deki Product sınıfına denk gelmektedir.
+abstract class Connection
+{
+    public abstract bool OpenConnection();
+    public abstract bool CloseConnection();
+}
+
+// Connection sınıfından türer.
+// UML'deki ConcreteProduct sınıfına denk gelmektedir.
+class MySQLConnection : Connection
+{
+    public override bool OpenConnection()
+    {
+        // MySQL veri tabanı bağlantısının açılması için
+        // Gerekli operasyonel işlemler...
+        return true;
+    }
+    public override bool CloseConnection()
+    {
+        // MySQL veri tabanı bağlantısının kapatılması için
+        // Gerekli operasyonel işlemler...
+        return true;
+    }
+}
+
+// Connection sınıfından türer.
+// UML'deki ConcreteProduct sınıfına denk gelmektedir.
+class OracleConnection : Connection
+{
+    public override bool OpenConnection()
+    {
+        // Oracle veri tabanı bağlantısının açılması için
+        // Gerekli operasyonel işlemler...
+        return true;
+    }
+    public override bool CloseConnection()
+    {
+        // Oracle veri tabanı bağlantısının kapatılması için
+        // Gerekli operasyonel işlemler...
+        return true;
+    }
+}
+
+// Oluşturulacak ürünlere ait metotları içerir.
+// UML'deki AbstractFactory sınıfına denk gelmektedir.
+interface IDatabaseFactory
+{
+    Connection CreateConnection();
+    Command CreateCommand();
+}
+
+// Oracle için ilişkili nesneler üretildi.
+// UML'deki ConcreteFactory sınıfına denk gelmektedir.
+class OracleDatabaseFactory : IDatabaseFactory
+{
+    public Command CreateCommand()
+    {
+        return new OracleCommand();
+    }
+    public Connection CreateConnection()
+    {
+        return new OracleConnection();
+    }
+}
+
+// MySQL için ilişkili nesneler üretildi.
+// UML'deki ConcreteFactory sınıfına denk gelmektedir.
+class MySQLDatabaseFactory : IDatabaseFactory
+{
+    public Command CreateCommand()
+    {
+        return new MySQLCommand();
+    }
+
+    public Connection CreateConnection()
+    {
+        return new MySQLConnection();
+    }
+}
+
+// IDatabaseFactory arayüzünü uygulayan sınıfları
+// Kullanarak temel operasyonel işlemleri yapan bir sınıf.
+class CustomOperation
+{
+    IDatabaseFactory _databaseFactory;
+    Connection _connection;
+    Command _command;
+
+    public CustomOperation(IDatabaseFactory databaseFactory)
+    {
+        _databaseFactory = databaseFactory;
+        _command = databaseFactory.CreateCommand();
+        _connection = databaseFactory.CreateConnection();
+    }
+
+    public void RemoveById(int id)
+    {
+        _connection.OpenConnection();
+        _command.ExecuteCommand("DELETE ...");
+        _connection.CloseConnection();
+    }
+}
+```
+
+
+
+```csharp
+CustomOperation customOperation = new CustomOperation(new OracleDatabaseFactory());
+customOperation.RemoveById(1);
+```
+
+
+
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
 
 
 
@@ -692,3 +872,4 @@ Yukarıdaki kodda da görüldüğü gibi `INotify` arayüzünü uygulayan sını
 - [https://tr.wikipedia.org/wiki/Kaps%C3%BClleme](https://tr.wikipedia.org/wiki/Kaps%C3%BClleme)
 - [https://medium.com/@atarikguney/abstraction-ve-encapsulation-tam-olarak-nedir-27b9aae99e56](https://medium.com/@atarikguney/abstraction-ve-encapsulation-tam-olarak-nedir-27b9aae99e56)
 - [Engin Demiroğ, Canlı Yayın - SOLID Yazılım Geliştirme Prensipleri](https://www.youtube.com/watch?v=JldZhDSvBBQ)
+- [https://www.gencayyildiz.com/blog/c-abstract-factory-design-patternabstract-factory-tasarim-deseni/](https://www.gencayyildiz.com/blog/c-abstract-factory-design-patternabstract-factory-tasarim-deseni/)
