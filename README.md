@@ -1,4 +1,4 @@
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/tasarim-desenleri-turkce-kaynak-2.png)
+![tasarim-desenleri-turkce-kaynak](./images/tasarim-desenleri-turkce-kaynak-2.png)
 
 ---
 
@@ -67,19 +67,17 @@ Ben Yusuf, K.T.Ü yazılım mühendisliği öğrencisiyim. Oluşturduğum bu kay
 
 ## Nesne Yönelimli Programlama Nedir?
 
-> Nesne yönelimli programlama kısmı temel hatırlatma olduğu için verilen diyagramlar, örnekler basit görünebilir. Bu kaynakta ana değinmemiz gereken yerler tasarım desenleri ve S.O.L.I.D prensipleridir, bu kısım hatırlatma niteliğindedir.
-
 Nesne yönelimli programlama paradigması, gerçek hayatta olan varlıkları yazılım dünyasında modellemekte kullandığımız, her işlevin nesneler olarak soyutlandığı bir programalama yaklaşımıdır. Tıpkı gerçek hayatta olduğu gibi yazılımda da bu sayede nesnelerimizin öznitelikleri, davranışları olacaktır.
 
 Ortaya çıkış nedenlerinden bazıları da yazılımda; karmaşıklığı azaltmaya, bakım maliyetini düşürmeye, modülariteyi artırmaya, nesneler arası hiyerarşiyi kurmaya yaramasıdır.    
 
 ### Nesneler, Sınıflar
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/developer-uml.png)
+![developer-uml](./images/developer-uml.png)
 
 Yukarıda `Developer` adında bir sınıf görülmektedir. <code>Sınıf</code> alanlar(fields) ve davranışlarımızın(methods) tanımlandığı yerdir. <code>Nesne</code> ise bu sınıftan bir örnek alınmış halidir.
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/developer-yusuf-halit.png)
+![developer-yusuf-halit](./images/developer-yusuf-halit.png)
 
 Diyelim ki Yusuf adında bir geliştiriciniz var. Yusuf bir nesne, `Developer` sınıfının bir örneğidir. Her `Developer`'ın birçok standart özelliği vardır: isim, yaş, ağırlık vb. Bunlar sınıfın alanları, öznitelikleridir.
 
@@ -95,11 +93,11 @@ Yukarıdaki örnekte bir adet sınıf kullanıldı ama gerçek uygulamalarda bil
 
 Hiyerarşi düzeninde; genel, kapsayıcı sınıfa  <code>superclass</code> (üst sınıf). Bunlardan türeyen sınıflara da <code>subclasses</code> (alt sınıflar) denir. Bu hiyerarşi ile birlikte alt sınıflar, üst sınıfların özelliklerini ve davranışlarını almaktadır. 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/cow-crow-uml.png)
+![cow-crow-uml](./images/cow-crow-uml.png)
 
 Bahsettiğimiz hiyerarşi yukarıda da gösterilmiştir. <code>Animal</code> adında bir <code>superclass</code> (üst sınıf) ve bulardan türeyen <code>subclasses</code> (alt sınıflar) mevcut. Bu alt sınıflar, üst sınıfın niteliklerini ve davranışlarını almaktadır. Bu yüzden kendi içlerinde tekrar yazmaya gerek yoktur. Ortak özeliklerin yanı sıra kendilerine has olan özellikler de kendi içlerinde tanımlanmıştır. Örneğin; `Cow` sınıfı içerisinde ineklere özgü olan süt sağma eylemi `milking()` fonksiyonu içerisinde gerçekleştirilmiştir. `Crow` sınıfına özel nitelikler ve davranışlar da kendi içerisinde tanımlanmıştır.
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/organism-uml.png)
+![organism-uml](./images/organism-uml.png)
 
 Bazı durumlarda UML diyagramlarında sınıfların barındırdığı nitelik ve davranışlardan ziyade bulunduğu hiyerarşi daha önemlidir, bu tür durumlarda yukarıdaki gibi basit bir tanımlama kullanılmaktadır.
 
@@ -107,7 +105,7 @@ Bazı durumlarda UML diyagramlarında sınıfların barındırdığı nitelik ve
 
 Nesne yönelimli programalama 4 temel ilke üzerine kuruludur ve bir dilin, nesne yönelimli programlamayı uyguluyor denmesi için 4 koşulu da sağlıyor olması gerekiyor. Bunlar; `Encapsulation`, `Abstraction`,  `Inheritance`, `Polymorphism`
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/oop-pillars.png)
+![oop-pillars](./images/oop-pillars.png)
 
 #### Encapsulation (Kapsülleme)
 
@@ -127,7 +125,7 @@ Farklı kod parçalarının kompleks kısımlarını, sahip oldukları ortak dav
 
 Kalıtım, mevcut sınıfların üzerine yeni sınıflar oluşturma yeteneğidir. Bu sayede türetilen sınıf, türediği sınıfın özelliklerini devralır. Kalıtımın en büyük yararı kodun yeniden kullanılmasıdır. Mevcut sınıftan biraz farklı bir sınıf oluşturmak istiyorsak, kodu kopyalamamıza gerek yoktur. Bunun yerine, varolan sınıfı genişletir ve ekstra işlevselliği alt sınıfa koyarız.    
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/human-uml.png)
+![human-uml](./images/human-uml.png)
 
 Çoğu programlama dilinde **yalnızca bir sınıftan türetme işlemi gerçekleştirilmektedir** ama birden fazla interface'den(ara birimden) türetilme işlemi de gerçekleştirilebilmektedir. 
 
@@ -135,7 +133,7 @@ Kalıtım, mevcut sınıfların üzerine yeni sınıflar oluşturma yeteneğidir
 
 Bir nesnenin başka bir nesne gibi davranabilmesi, kullanılabilmesi. Biraz daha açık bir ifade ile: alt sınıfların, üst sınıflara ait olan davranışlarını başka bir biçimde gerçekleştiriyor olması olayıdır. 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-poly-logger-service.png)    
+![uml-poly-logger-service](./images/uml-poly-logger-service.png)    
 
 Yukarıda `ILoggerService` adında bir `Interface` ve içerisinde de `log()` adında metotu bulunmaktadır.  Bu interface'den türetilen `DatabaseLoggerService` ve `FileLoggerService` sınıfları, metotu implemente etmek(uygulamak) zorundadır ve kendince uygulayacaktır ki bundan dolayı da bu metota ait farklı davranışlar söz konusu olacaktır.
 
@@ -161,37 +159,37 @@ Bu kısımda kaynağın herkese hitap etmesi açısından temel düzeyde de olsa
 
 #### Inheritance
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-inheritance.png)
+![uml-inheritance](./images/uml-inheritance.png)
 
 Sınıflar arası kalıtımı gösterir. Alt sınıftan üst sınıfa doğru içi boş ok ile gösterilir.
 
 #### Implementation
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-realization.png)
+![uml-realization](./images/uml-realization.png)
 
 Arayüzler ile sınıflar arasındaki ilişkiyi gösterir.
 
 #### Association (Bağlantı)
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-association.png)
+![uml-association](./images/uml-association.png)
 
 Bir nesnenin başka bir nesneyi kullandığı veya onunla etkileşime girdiği bir ilişki türüdür. Kullanılmak istenen nesneye ok işareti ile refere edilir. **Sınıflar arasında HAS-A ilişkisi bulunuyor.** 
 
 #### Dependency (Bağımlılık)
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-dependency.png)
+![uml-dependency](./images/uml-dependency.png)
 
 Genellikle nesneler arasında kalıcı bir bağlantı olmadığını ima eden daha zayıf bir ilişki çeşididir. Bağımlılık genellikle (ancak her zaman değil), bir nesnenin başka bir nesneyi bir parametre olarak kabul ettiğini, başlattığını veya başka bir nesneyi kullandığını gösterir. Sınıflar arasındaki bağımlılığı nasıl tespit edebileceğiniz aşağıda açıklanmıştır: **Bir sınıfın tanımında yapılan değişiklikler başka bir sınıfta değişikliklere neden oluyorsa iki sınıf arasında bir bağımlılık vardır.**
 
 #### Composition(Bileşim)
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-composition.png)
+![uml-composition](./images/uml-composition.png)
 
 Bütünlük sağlar, bir sınıf veya sınıfların diğer bir sınıfın parçası olduğu anlamı çıkar. **Parçalar tek başlarına bir anlam taşımazlar**. Yukarıdaki örneğe bakılacağı zaman firma konumlardan oluşmaktadır, ayrılma durumu yoktur, bağımlıdır, konum tek başına bir anlam ifade etmez.
 
 #### Aggregation(İçerme)
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/uml-aggregation.png)
+![uml-aggregation](./images/uml-aggregation.png)
 
 Bütünlük sağlar, bir sınıf veya sınıfların diğer bir sınıfın parçası olduğu anlamı çıkar. **Parçalar tek başlarına bir anlam taşıyabilirler**. Yukarıdaki örneğe bakılacağı zaman havalimanı uçakları içerir, ayrılma durumu olabilir, sıkı sıkıya bağımlılık yoktur, uçak tek başına bir anlam ifade edebilir.
 
@@ -203,15 +201,13 @@ Buradaki sürdürülebilirlikten kasıt; yazılım gereksinimleri değiştiğind
 
 Bunları yapmamızı sağlayan prensipleri 5 madde içerisinde inceleyeceğiz.
 
-
-
 ### Single Responsibility Principle (Tek Sorumluluk Prensibi)
 
 > Her sınıf, metot, fonksiyon tek bir sorumluluğa sahip olmalıdır.
 
 Şayet bu kurala uymazsak ilerleyen süreçte bir değişikliğe gidildiğinde bunun etkisini birçok yerde görmüş oluruz. Nedeni ise bir yapıya birden fazla sorumluluk yüklenmesinden dolayıdır. Eğer değişikliklerden etkilenen yerler arasında sistemin birçok yerinde kullanılan bir yapımız da varsa maliyet gittikçe artacaktır.   
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/single-res-person.png)
+![single-res-person](./images/single-res-person.png)
 
 JAVA Kod Örneği:
 
@@ -229,7 +225,7 @@ Yukarıdaki diyagrama ve koda baktığımızda `Person` sınıfı içerisinde `s
 
 Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir.
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/single-res-person-2.png)
+![single-res-person-2](./images/single-res-person-2.png)
 
 JAVA Kod Örneği:
 
@@ -251,7 +247,7 @@ class EmailService {
 
 Yazılımlar için zamanla değişim şüphesiz kaçınılmazdır; değişen iş kuralları, kullanılan harici kütüphaneler gibi başlıca nedenler örnek gösterilebilir. Bu prensibin anlatmak istediği şey **yeni bir davranış ya da özellik eklemek istediğimiz durumda; yapmak istediğimiz değişikliği mevcut koda dokunmadan, değişimi sadece yeni kodlar üzerinden sağlamaktır.**
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/open-closed.png)
+![open-closed](./images/open-closed.png)
 
 JAVA Kod Örneği:
 
@@ -279,7 +275,7 @@ Yukarıdaki koda ve diyagrama baktığımız zaman `EmployeeManager` adında bir
 
 Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. Yeni bir eklemede mevcut koda dokunmaya gerek kalmıyor bu sayede. Kayıt işlemlerini `MySQL` üzerinde yapmak istediğimiz zaman `MySQLDatabase` adında bir sınıf oluşturup `IDatabase` arayüzünü uygulamamız yeterlidir. 🥰
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/open-closed-2.png)
+![open-closed-2](./images/open-closed-2.png)
 
 JAVA Kod Örneği:
 
@@ -311,9 +307,7 @@ class OracleDatabase implements IDatabase {
 > Alt sınıflardan oluşan nesnelerin, üst sınıfın nesneleri ile yer değiştirdiklerinde aynı davranışı sergilemesi gerekmektedir.
 
 
-
 Alt sınıflar, üst sınıflardan türediği için onların davranışlarını devralırlar. Eğer üst sınflara ait davranışları gerçekleştirmiyorlarsa davranışı yapan metotu muhtemelen boş bırakır ya da bir hata fırlatırız fakat bu işlemler kod kirliliğine ve gereksiz kod kalabalığına neden olmaktadır. Bunların yanı sıra projeye daha sonradan dahil olacak geliştiriciler için de sorun oluşturmaktadır. Geliştirici, sistemin sağlıklı yürüdüğünü düşünerek gerçekleştirilmeyen bir davranışı kullanmaya çalışabilir.
-
 
 
 ====> BURAYA ÖRNEK GELECEK <======
@@ -330,7 +324,7 @@ Arayüzlerimizde genel olarak birçok operasyonel işlem barındırabiliriz faka
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/interface-segre.png)
+![interface-segre](./images/interface-segre.png)
 
 JAVA Kod Örneği:
 
@@ -370,7 +364,7 @@ Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yap�
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/interface-segre-2.png)
+![interface-segre-2](./images/interface-segre-2.png)
 
 
 
@@ -426,7 +420,7 @@ class RobotWorker implements IWorker {
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/dependency-inv.png)
+![dependency-inv](./images/dependency-inv.png)
 
 
 
@@ -460,8 +454,7 @@ Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yap�
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/dependency-inv-2.png)
-
+![dependency-inv-2](./images/dependency-inv-2.png)
 
 
 ```java
@@ -526,7 +519,7 @@ Tasarım desenleri; yazılım tasarımında, problemlerde karşımıza sıkça �
 
 > Bir sınıfın sadece bir örneği olmalıdır ve bu örneğe global bir erişim noktası sağlanmalıdır.
 
-![singleton-design-pattern](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/singleton.png)
+![singleton-design-pattern](./images/singleton.png)
 
 Desene ait yukarıdaki diyagrama bakacak olursak, örneğini istediğimiz sınıfın;
 
@@ -601,7 +594,7 @@ public static Database GetInstance()
 
 Buradaki amaç istemci tarafından birbirleri ile ilişkili nesnelerin oluşturulma anını soyutlamak, **istemci hangi sınıf örneğini alabileceğini bilebilir ama oluşturulma detayları bilmez**. Detaylar yani nesnenin nasıl oluşturulacağı soyutlanır. Örneğin oluşturulan sınıfın `Singleton` olarak oluşturulması gibi.
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/factory-pattern.png)
+![factory-pattern](./images/factory-pattern.png)
 
 
 
@@ -693,7 +686,7 @@ Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığım
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/abstract-factory-uml.png)
+![abstract-factory-uml](./images/abstract-factory-uml.png)
 
 **ProductA**, **ProductB**: Temel sınıflarımız, soyuttur ve oluşturulmasını istediğimiz sınıflar bunlardan türer.
 
@@ -710,8 +703,6 @@ Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığım
 
 
 C# Kod Örneği:
-
-
 
 ```csharp
 // Soyut sınıfımızdır.
@@ -878,7 +869,7 @@ Prototip deseninin tasarlanmasının asıl sebebi, ilgili nesne üzerinden aynı
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/prototype-uml.png)
+![prototype-uml](./images/prototype-uml.png)
 
 
 
@@ -986,7 +977,7 @@ Console.WriteLine(gulizar == cloneGulizar); //output: false
 
 Farklı sistemleri kendi sistemimize dahil ederken bazen yapılar uyuşmayabiliyor. Buradaki yapılar arayüzler olabilir. Bu desenin amacı arayüz için bir adapter oluşturarak sanki kendi sistemimize aitmiş gibi çalıştırmayı sağlar. Özetle; **uyumsuz bir yapıyı, istemcinin beklediği bir yapıya getirir.**
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/adapter-uml.png)
+![adapter-uml](./images/adapter-uml.png)
 
 - **Adaptee:** Mevcut sisteme uygulanmak istenen sınıf.
 
@@ -1136,9 +1127,7 @@ if (blackListService.CheckEmployeeIsTheBlackList(duygu))
 Yukarıdaki koda baktığımız zaman istemci tarafında önce müşterinin kara listede olup olmadığı kontrolü yapıldı daha sonra ise duruma göre kredi kartı oluşturması sağlandı. Buraya kadar pek de bir şey yok, çünkü bir adet kontrol var fakat tahmin edileceği üzere banka işlemlerinde birden fazla operasyonel işlem mevcut. Bu işlemlerin kalabalıklığından doğacak problemler arasında;
 
 - Başka bir yerde kredi kartı oluşturulmak istendiğinde buradaki kodların aynısının oraya da yazılmasından kaynaklı kod kalabalığı olacaktır.
-
 - İstemci tarafında bu işlemler gerçekleştiği için geliştiricinin bu doğrulama süreçlerini iyi ve eksiksiz takip etmesi gerekiyor olacak.
-
 - Olası bir değişimde birden fazla yerde değişiklik yapması durumunda kalınacaktır.
 
 Yukarıdaki temel nedenler olayın anlaşılması için yeterlidir.
@@ -1147,9 +1136,7 @@ Yukarıdaki temel nedenler olayın anlaşılması için yeterlidir.
 
 Bu karmaşıklığın önüne geçmek için `Facade` tasarım deseni uygun bir çözümdür. Aşağıda bu desene ait UML diyagramı görülmektedir.
 
-
-
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/facade-uml.png)
+![facade-uml](./images/facade-uml.png)
 
 Yukarıdaki UML diyagramından esinlenerek kredi kartı işlemlerindeki karmaşıklığı `CreditCardFacade` adında oluşturduğumuz sınıf içerisinde gizleyebiliriz. Kodumuz aşağıdaki gibi olacaktır.
 
@@ -1232,7 +1219,6 @@ Bu sayede kod kalabalığının önüne geçilmiş olundu bunun da yanı sıra e
 > Davranışsal tasarım desenleri, nesneler arası ortak haberleşmeyi efektif ve esnek bir yapıya getirmemizi  sağlar.
 
 
-
 - [Chain of Responsibility]()
 - [Command]()
 - [Iterator]()
@@ -1244,6 +1230,162 @@ Bu sayede kod kalabalığının önüne geçilmiş olundu bunun da yanı sıra e
 - [Template Method]()
 - [Visitor]()
 
+#### ⛓️ Chain of Responsibility
+
+> Chain of Responsibility tasarım deseni, bir amaca yönelik bir dizi işlemi gerçekleştiren nesnelerin birbirinden bağımsız bir şekilde çalışmasını ve herbir nesnenin sadece kendisiyle tanımlı işleri yapmasını sağlayan bir tasarım desenidir.
+
+Geliştirdiğimiz uygulamada gelen görselleri PNG formatına çevirdiğimiz var sayılsın.
+
+C# Kod Örneği:
+
+```csharp
+// Uygulama süresince resimlerimizi temsil edecek sınıf.
+class Image
+{
+    public string name;
+    public string extension;
+
+    public Image(string name, string extension)
+    {
+        this.name = name;
+        this.extension = extension;
+    }
+}
+```
+
+```csharp
+Image image = new Image("tatil-fotografim", "JPEG");
+
+if (image.extension == "JPG")
+{
+    // JPG işlemine ait dönüştürme kodları işlemleri.
+}
+else if (image.extension == "JPEG")
+{
+    // JPEG işlemine ait dönüştürme kodları işlemleri.
+}
+else
+{
+    // Diğer türlere ait dönüştürme işlemleri.
+}
+```
+
+Yukarıdaki koda bakıldığı zaman if-else içerisinde bir yığın görünmektedir. Herbir if bloğu kendi başına bir işlem. Yeni bir uzantı geldiğinde tekrardan bir blok açmamız gerekecektir, bunların yanı sıra bu kodu başka bir yerde de kullanılmak istendiğinde iyice kod kalabalığına da sebep olacaktır. Bu tasarım deseni, bizlere sorumlulukları ayrı bir sınıfa ayırmamızı ve birbirlerine gevşek bağlı olacak şekilde bağlamamızı söylüyor. Aşağıda bu desene ait UML diyagramı mevcuttur. Kodu UML diyagramına bakarak aşağıdaki gibi düzenleyebiliriz.
+
+![chain-of-responsibility](./images/chain-of-responsibility.png)
+
+C# Kod Örneği:
+
+```csharp
+// Uygulama süresince resimlerimizi temsil edecek sınıf.
+class Image
+{
+    public string name;
+    public string extension;
+
+    public Image(string name, string extension)
+    {
+        this.name = name;
+        this.extension = extension;
+    }
+}
+```
+
+```csharp
+// Zincirin bir sonraki halkasının referansının tutulduğu sınıftır.
+
+// İşlemi gerçekleştirecek olan metot tanımı bulunur.
+// UML diyagramındaki BaseHandler sınıfına denk gelmektedir.
+abstract class BaseHandler
+{
+    protected BaseHandler _nextHandler;
+    public void SetNextHandler(BaseHandler nextHandler)
+    {
+        _nextHandler = nextHandler;
+    }
+
+    public abstract void HandleRequest(Image image);
+}
+
+// JPEG dosyalarını dönüştüren sınıf.
+// UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
+class JPEGHandler : BaseHandler
+{
+    public override void HandleRequest(Image image)
+    {
+        if (image.extension == "JPEG")
+        {
+            Console.WriteLine("JPEG to PNG");
+            // JPEG işlemine ait dönüştürme kodları işlemleri.
+        }
+        else
+        {
+            // Bu sınıfa ait bir işlem değilse zincirin bir sonraki halkasına aktarılır.
+            _nextHandler.HandleRequest(image);
+        }
+    }
+}
+
+// JPG dosyalarını dönüştüren sınıf.
+// UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
+class JPGHandler : BaseHandler
+{
+    public override void HandleRequest(Image image)
+    {
+        if (image.extension == "JPG")
+        {
+            Console.WriteLine("JPG to PNG");
+            // JPG işlemine ait dönüştürme kodları işlemleri.
+        }
+        else
+        {
+            // Bu sınıfa ait bir işlem değilse zincirin bir sonraki halkasına aktarılır.
+            _nextHandler.HandleRequest(image);
+        }
+    }
+}
+
+// Herhangi bir tipteki dosyayı dönüştüren sınıf.
+// UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
+class CustomHandler : BaseHandler
+{
+    public override void HandleRequest(Image image)
+    {
+        if (image.extension == "OtherExtension")
+        {
+            Console.WriteLine("OtherExtension to PNG");
+            // Herhangi bir tipteki dosyanın işlemine ait dönüştürme kodları işlemleri.
+        }
+        // Burada else ifadesi bulunmamaktadır bu da zincirin son halkası olduğu anlamına gelir.
+    }
+}
+```
+
+```csharp
+Image image = new Image("tatil-fotografim", "JPG");
+
+JPEGHandler jpegHandler = new JPEGHandler();
+JPGHandler jpgHandler = new JPGHandler();
+CustomHandler customHandler = new CustomHandler();
+
+// Zincirlerin birbirleri ile bağlantısının yapıldığı yerdir.
+// JPEG bu işlemi gerçekleştiremezse JPG'e aktarır o da Custom'a aktarır.
+jpegHandler.SetNextHandler(jpgHandler);
+jpgHandler.SetNextHandler(customHandler);
+
+jpegHandler.HandleRequest(image); // output: JPG to PNG
+```
+
+Bu tasarım desenini bu probleme uyarlayarak;
+
+- Tekrar kullanılabilir kod elde ettik.
+- Bağımlılıkları gevşek hale getirdik.
+- Zincirin halkası istemci tarafından değiştirilebilir bu sayede de genişletilebilir bir yapı elde edildi.
+
+gibi faydaları görebilmekteyiz.
+
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
 #### 💪 Strategy
 
 > Strategy tasarım deseni, bir algoritma ailesi tanımlamamızı, her birini ayrı bir sınıfa koymamızı ve nesnelerinin birbiriyle değiştirilebilir hale getirmenizi sağlayan davranışsal bir tasarım modelidir.
@@ -1252,7 +1394,7 @@ Bir işlemin birden fazla yapılması, çalışma zamanında algoritma değişik
 
 
 
-![ ](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/blob/master/images/stragety-uml.png)
+![stragety-uml](./images/stragety-uml.png)
 
 Senaryo olarak e-ticaret projesinin ödeme kısmını düşünelim. Ödeme metotları arasında; kredi kartı, Paypal gibi seçenekler mevcuttur. 
 
@@ -1268,7 +1410,7 @@ interface IPayment
     void Pay(int amount);
 }
 
-// UMl diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
+// UML diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
 // UML diyagramındaki Strategy arayüzüne denk gelen arayüzü uyguluyor.
 class PaypalPayment : IPayment
 {
@@ -1288,7 +1430,7 @@ class PaypalPayment : IPayment
     }
 }
 
-// UMl diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
+// UML diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
 // UML diyagramındaki Strategy arayüzüne denk gelen arayüzü uyguluyor.
 class CreditCartPayment : IPayment
 {
