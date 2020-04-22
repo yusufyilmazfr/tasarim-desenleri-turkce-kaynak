@@ -48,6 +48,7 @@
    - [Behavioral (Davranışsal)]()
      - [Chain of Responsibility]()
      - [Command]()
+     - [Interpreter]()
      - [Iterator]()
      - [Mediator]()
      - [Memento]()
@@ -306,23 +307,15 @@ class OracleDatabase implements IDatabase {
 
 > Alt sınıflardan oluşan nesnelerin, üst sınıfın nesneleri ile yer değiştirdiklerinde aynı davranışı sergilemesi gerekmektedir.
 
-
 Alt sınıflar, üst sınıflardan türediği için onların davranışlarını devralırlar. Eğer üst sınflara ait davranışları gerçekleştirmiyorlarsa davranışı yapan metotu muhtemelen boş bırakır ya da bir hata fırlatırız fakat bu işlemler kod kirliliğine ve gereksiz kod kalabalığına neden olmaktadır. Bunların yanı sıra projeye daha sonradan dahil olacak geliştiriciler için de sorun oluşturmaktadır. Geliştirici, sistemin sağlıklı yürüdüğünü düşünerek gerçekleştirilmeyen bir davranışı kullanmaya çalışabilir.
 
-
 ====> BURAYA ÖRNEK GELECEK <======
-
-
 
 ### Interface Segregation Principle (Arayüz Ayrımı Prensibi)
 
 > Sınıflar, kullanmadığı metotları içeren arayüzleri uygulamaya zorlanmamalıdır. 
 
-
-
 Arayüzlerimizde genel olarak birçok operasyonel işlem barındırabiliriz fakat bu arayüzü uygulayan sınıfların, bazılarını kullanmama durumu olabilmektedir. **Bir sınıf birden fazla arayüzü uygulaması özelliğiyle de birlikte bu prensip, bu tür durumlarda arayüzlerin ayrılmasını ve ihtiyaç halinde olanların kullanmasını söylemektedir**. 
-
-
 
 ![interface-segre](./images/interface-segre.png)
 
@@ -358,15 +351,9 @@ class RobotWorker implements IWorker {
 
 Yukarıdaki diyagram incelendiğinde, şirket çalışanları `IWorker` arayüzünü uygulamaktadır; yemek yeme, ödeme alma, çalışma gibi davranışları gerçekleştirmektedir. Fakat daha sonradan bazı işler robotlar tarafından yapılmaya başlandı ya da dış kaynaktan birileri(outsource) de çalışmaya başladı. Bu durumda bazı davranışlar gerçekleşmeyecektir. Örneğin robotların yemek yeme ya da ödeme alma davranışını gerçekleştirememesi gibi ya da dış kaynaktan gelenlere verilmeyen yemek imkanı. Bu gerçekleşmeyen davranışların içlerini ya boş bırakma ya da hata fırlatma durumunda kalırız. **Bu tür durumlarda bu prensip bizlere bu arayüzlerin ayrılmasını ve ihtiyaç halinde olanların kullanılmasını söylemektedir.**
 
-
-
 Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir. `work()`, `pay()`, `eat()` davranışları başka arayüzlere aktarıldı ve ihtiyaç halinde olanlar uygulandı.
 
-
-
 ![interface-segre-2](./images/interface-segre-2.png)
-
-
 
 JAVA Kod Örneği:
 
@@ -410,19 +397,13 @@ class RobotWorker implements IWorker {
 }
 ```
 
-
-
 ### Dependency Inversion Principle (Bağımlılıkların Tersine Çevrilmesi Prensibi)
 
 > Yüksek seviye sınıflar, düşük seviye sınıflara bağlı olmamalıdır. Her ikisi de soyutlamalara bağlı olmalıdır.
 > 
 > Soyutlamalar, detaylara bağlı olmamalıdır.  Detaylar, soyutlamalara bağlı olmalıdır.
 
-
-
 ![dependency-inv](./images/dependency-inv.png)
-
-
 
 JAVA Kod Örneği:
 
@@ -448,14 +429,9 @@ class OracleDatabase {
 
 Yukarıdaki diyagram ve kod incelendiğinde `ExceptionReporter`  sınıfının (yüksek seviyeli sınıf), `OracleDatabase` sınıfına (düşük seviyeli sınıf) direkt olarak bağımlı olduğu görülmektedir. İleride veri tabanı olarak Oracle değil de MySQL kullanmak istersek maalesef bu sınıfa müdahale etmek zorunda kalacağız. Bu istenmeyen bir davranıştır. Bunun çözümünü ise buradaki **bağımlılıkları soyutlayarak** sağlayacağız.
 
-
-
 Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yapı elde edilir.
 
-
-
 ![dependency-inv-2](./images/dependency-inv-2.png)
-
 
 ```java
 class ExceptionReporter {
@@ -490,18 +466,13 @@ class OracleDatabase implements IDatabase {
 }
 ```
 
-
-
 ## Tasarım Deseni Nedir?
 
 Tasarım desenleri; yazılım tasarımında, problemlerde karşımıza sıkça çıkan ortak sorunları çözmek için oluşturulmuş desenlerdir. Tasarım desenleri, yazılım sürecinde uygulanan çözümlerin esnekliği ve tekrar kullanılabilirliği ile de ilgilenmektedir.
 
-
-
 *Her desen, çevremizde tekrar tekrar ortaya çıkan bir sorunu açıklar ve daha sonra bu soruna çözümün uygulanmasını, bu çözümü iki kez aynı şekilde yapmadan milyonlarca kez kullanabileceğiniz şekilde tanımlar.*
 
 —Christopher Alexander
-
 
 ## Tasarım Desenleri
 
@@ -584,19 +555,13 @@ public static Database GetInstance()
 
   *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
 #### 🏭 Factory
 
 > Factory tasarım deseni birbirleri ile ilişkili nesneleri oluşturmak için bir arayüz sağlar ve alt sınıfların hangi sınıfın örneğini oluşturacağına olanak sağlar. 
 
-
-
 Buradaki amaç istemci tarafından birbirleri ile ilişkili nesnelerin oluşturulma anını soyutlamak, **istemci hangi sınıf örneğini alabileceğini bilebilir ama oluşturulma detayları bilmez**. Detaylar yani nesnenin nasıl oluşturulacağı soyutlanır. Örneğin oluşturulan sınıfın `Singleton` olarak oluşturulması gibi.
 
 ![factory-pattern](./images/factory-pattern.png)
-
-
 
 C# Kod Örneği:
 
@@ -656,8 +621,6 @@ class NotifyFactory
 }
 ```
 
-
-
 ```csharp
 NotifyFactory notifyFactory = new NotifyFactory();
 
@@ -668,23 +631,15 @@ notify.SendNotification(new User());
 
 Yukarıdaki kodda da görüldüğü gibi `INotify` arayüzünü uygulayan sınıfların oluşturulması istemciden soyutlanmıştır.
 
-
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
 
 #### 🏭🏭 Abstract Factory
 
 > Abstract Factory tasarım deseni birbirleri ile ilişkili ürün ailesini oluşturmak için bir arayüz sağlar.
 
-
-
 Factory tasarım deseninde bir ürünün oluşturulması soyutlanmış iken Abstract Factory deseninde birbirleri ile ilişkili ürün ailelerininin oluşturulması soyutlanmıştır. **Factory üreten Factory deseni olarak da düşünülebilir.** 🧐
 
-
-
 Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığımız durumlarda, istemciyi bu yapılardan soyutlamak için Abstract Factory doğru bir yaklaşım olacaktır.
-
-
 
 ![abstract-factory-uml](./images/abstract-factory-uml.png)
 
@@ -696,11 +651,7 @@ Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığım
 
 **ConcreteFactory**: `AbstractFactory` arayüzünü uygulayarak gerekli sınıfların oluşturulmasını sağlar.
 
-
-
 Şöyle bir senaryo düşünülebilir; sistemimiz isteğe bağlı Oracle ya da MySQL için sorgu çalıştırabilir olsun. Bu işlemler için temel olarak da bağlantının açılması, kapatılması ve sorgunun çalıştırılması gerekli olduğu varsayalım.  Bu işlemler direkt olarak herbiri Factory desen olarak ayarlanabilir ama birbirleri ile ilişkili aileden geldikleri için bu desene daha sağlıklı olacaktır. 
-
-
 
 C# Kod Örneği:
 
@@ -839,17 +790,12 @@ class CustomOperation
 }
 ```
 
-
-
 ```csharp
 CustomOperation customOperation = new CustomOperation(new OracleDatabaseFactory());
 customOperation.RemoveById(1);
 ```
 
-
-
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
 
 #### ⛏️ Builder
 
@@ -862,7 +808,6 @@ etkilemeyecektir.
 
                         *Bu diyagram refactoring.guru üzerinden alınmıştır*.
 
-
 **Builder:** Product nesnesinin oluşturulması için gerekli soyut arayüzü sunar.
 
 **ConcreteBuilder:** Product nesnesini oluşturur. Product ile ilişkili temel özellikleri de uygular.
@@ -871,11 +816,7 @@ etkilemeyecektir.
 
 **Product:** Üretim sonucu ortaya çıkan nesneyi temsil eder. Dahili yapısı(örneğin temel özellikleri) ConcreteBuilder tarafından inşa edilir.
 
-
-
 Senaryo olarak da online bir eğitim platformunun ilk defa eğitim alacak olan öğrencilere ilk eğitimini yarı fiyatına verdiği düşünülsün.
-
-
 
 C# Kod Örneği:
 
@@ -1012,16 +953,11 @@ Console.WriteLine($"{lesson.name} - {lesson.price} - {lesson.discountedPrice}");
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
 #### 🐑 Prototype
 
 > Prototype tasarım deseni, mevcut nesnelerin prototiplerinin oluşturulmasını yani nesnelerin kopyalarını elde etmeyi sağlayan bir tasarım desenidir.
 
-
-
 Prototip deseninin tasarlanmasının asıl sebebi, ilgili nesne üzerinden aynı tipte başka bir nesneyi hızlıca üretebilmektir. Haliyle üretimi esnasında maliyetli olabilecek nesneleri(ki burada maliyetten kasıt parametreli constructer vs. olabilir) var olan nesne üzerinden `new` anahtar sözcüğünü kullanmadan bir şekilde oluşturulmasını sağlayabilmektedir.
-
-
 
 `Shallow Copy` ve `Deep Copy` olmak üzere iki tür nesne kopyalama işlemi mevcuttur.
 
@@ -1029,11 +965,7 @@ Prototip deseninin tasarlanmasının asıl sebebi, ilgili nesne üzerinden aynı
 
 `Deep Copy` ile nesneler birebir kopyalanabilmekte ve bu kopya sonucu ile asıl nesne farklı referanslar ile işaretlenebilmektedir. Prototype Design Pattern’de bu kopyalama yaklaşımında bulunmak en doğrusudur.
 
-
-
 ![prototype-uml](./images/prototype-uml.png)
-
-
 
 JAVA Kod Örneği:
 
@@ -1230,21 +1162,13 @@ Yukarıdaki tasarımı baktığımız zaman  tasarımımız kalıtım üzerine k
 
 Bunun yanı sıra `TextMessage` ya da `EmailMessage` gibi yapılarda oluşacak herhangi bir değişiklik `TextMessageSender` veya `EmailMessageSender` gibi sınıfları etkilemektedir. Birbirinden bağımsız yapılar değil.  
 
-
-
 Tekrar kullanılabilirlik açısından da olumsuz bir yana sahiptir. Mesaj gönderme işlemlerini başka bir projede kullanmak istediğimizde bu işlemleri gerçekleştiren sınıfların türediği sınıfları da beraberinde götürmemiz gerekcektir.
 
-
-
 Bridge tasarım deseni burada abstraction ve implementation kısmını ayırarak birbirinden bağımsız geliştirilebilir yapılar elde etmemizi sağlar.
-
-
 
 Aşağıda Bridge tasarım desenine ait diyagram görülmektedir.
 
 ![bridge-without-imp-and-abst](./images/bridge-without-imp-and-abst.png)
-
-
 
 Yukarıdaki desene bakarak özetleyecek olursak:
 
@@ -1257,8 +1181,6 @@ Yukarıdaki desene bakarak özetleyecek olursak:
 - **ConcreteImplementor(TextMessageSender, EmailMessageSender):** Implementor (MessageSender) arayüzünu uygulayan, gerçek işi yapan sınıflardır.
 
 Verilen diyagrama ait kod örneği aşağıdaki gibi olacaktır.
-
-
 
 C# Kod Örneği:
 
@@ -1343,8 +1265,6 @@ public class EmailMessageSender : IMessageSender
 }
 ```
 
-
-
 ```csharp
 IMessageSender textMessageSender = new TextMessageSender();
 Message textMessage = new TextMessage(textMessageSender);
@@ -1356,7 +1276,6 @@ emailMessage.Send(); // output: EmailMessageSender: Sending email message...
 ```
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
 
 #### 🌲 Composite
 
@@ -1377,11 +1296,7 @@ Aşağıda bu desene ait UML diyagramı yer almaktadır.
 
 - **Leaf:** Ağaç yapısındaki en alt elemanı temsil etmektedir.
 
-
-
 Senaryo olarak iç içe geçmiş kategorileri ve kategorilerin en altında bulunan ürünleri düşünebiliriz. 
-
-
 
 C# Kod Örneği:
 
@@ -1489,16 +1404,11 @@ items.DrawHierarchy();
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
 #### 🎺 Decorator
 
 > Decorator tasarım deseni, nesnelere dinamik olarak yeni sorumluluklar atamamızı sağlayan tasarım desenidir.
 
-
-
 Bir sınıfın davranışını değiştirmemiz gerektiğinde akla gelen ilk şeylerden birisi temel operasyonların tanımlandığı bir sınıf tanımlamak ve daha sonra o sınıfı genişletmek bu sayede aynı davranışı farklı şekillerde sergileyen birçok sınıf olacaktır.
-
-
 
 Örnek vermek gerekirse bir dosyanın okunması ve dosyaya yazılma işlemi. (UML diyagramı aşağıdaki gibi olacaktır.)
 
@@ -1506,13 +1416,9 @@ Bir sınıfın davranışını değiştirmemiz gerektiğinde akla gelen ilk şey
 
 İlerleyen süreçte dosya işlemlerinde; yazılan dosyanın sıkıştırılması ya da bir çeşit imzalama işlemlerine tabi tutulması, okunan dosyaların değiştirilmiş olup olmadığı kontrol gibi senaryolar da gelebilir. Bu tür senaryolar karşısında mevcut sınıftan yeni sınıflar türetme yolunda ilerleriz.
 
-
-
 ![decorator-2](./images/decorator-2.png)
 
 Gittikçe hiyerarşi artmaktadır. Bunun yanı sıra;
-
-
 
 - Üst sınıflarda yapılacak herhangi bir değişiklik hiyerarşinin alt kısımlarını da etkilemektedir. 
 
@@ -1521,12 +1427,8 @@ Gittikçe hiyerarşi artmaktadır. Bunun yanı sıra;
 - Çoğu programlama dilinde bir sınıfın sadece bir adet üst sınıfı olmaktadır, yani bir sınıftan türeyebiliyor. Bu da hiyerarşi için oldukça zor duruma sokacaktır bizleri.
 
 - Kalıtım statik bir yapıdadır bu yüzden run-time sırasında nesnenin davranışı değiştirilemeyecektir. (Alt sınıf davranışları hariç)
-  
-  
 
 gibi bir çok dezavantaj ortaya çıkmaktadır bu tür olaylarda. Bu tür durumlarda Composite tasarım deseni kullanılmaktadır. Kalıtımdan ziyade composition (bileşim) işlemi yapılmalıdır. Aşağıda bu desene ait UML diyagramı bulunmaktadır.
-
- 
 
 ![decorator-uml](./images/decorator-uml.png)
 
@@ -1537,10 +1439,6 @@ gibi bir çok dezavantaj ortaya çıkmaktadır bu tür olaylarda. Bu tür duruml
 - **BaseDecorator:** `Component` arayüzünü uygular ve bu arayüzü uygulayan yapının referansını da barındırır.
 
 - **ConcreteDecorator:** Yeni davranışların tanımlandığı sınıftır, `BaseDecorator` sınıfından türer.
-
-
-
-
 
 C# Kod Örneği:
 
@@ -1655,21 +1553,13 @@ compressedDataSource.WriteData(new object());
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
-
-
 #### 📦 Facade
 
 > Facade tasarım deseni, bir alt sistemdeki arayüzlere bir birleşik arayüz sağlayarak alt sistemin kullanımını daha kolay hale getirmeyi amaçlar.
 
-
-
 Bu desendeki amaç karmaşık iş süreçlerini saklamaktır. Bunların yanı sıra algoritmalar, iş süreçleri vs. pek çok nesneden hizmet alarak ilerleyebilir. Bu detaylı bilgiler de bir nevi istemciden soyutlanmış olur.
 
 Özetle: **amaç sistemi yeni bir bir alt yapıya sokmak değil, alt sınıflardaki karmaşıklığı soyutlayarak pratiklik sunmaktır.**
-
-
 
 Senaryo olarak bir bankanın müşterilerine kredi kartı verdiklerini, bu kredi kartı verme işlemlerinden önce ise kendi iş kurallarını uyguladığını kabul edelim. Kodun kalabalık olmaması için temel olarak müşteriye kredi kartı vermeden önce kara listede olup olmadığı kontrol ediliyor olsun.
 
@@ -1736,8 +1626,6 @@ Yukarıdaki koda baktığımız zaman istemci tarafında önce müşterinin kara
 - Olası bir değişimde birden fazla yerde değişiklik yapması durumunda kalınacaktır.
 
 Yukarıdaki temel nedenler olayın anlaşılması için yeterlidir.
-
-
 
 Bu karmaşıklığın önüne geçmek için `Facade` tasarım deseni uygun bir çözümdür. Aşağıda bu desene ait UML diyagramı görülmektedir.
 
@@ -1813,23 +1701,15 @@ creditCardFacade.CreateCreditCart(duygu);
 
 Bu sayede kod kalabalığının önüne geçilmiş olundu bunun da yanı sıra eklenecek yeni bir iş kuralında istemci tarafından herhangi bir değişikliğe gidilmemesi olumlu bir artı olarak geliyor.
 
-
-
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
-
 
 #### 🔍 Proxy
 
 > Proxy tasarım deseni, istemcinin orijinal nesneye direkt erişimi yerine bu erişimi nesneyi temsil eden proxy (vekil) sınıflar üzerinden gerçekleştirmesini ve bu proxy (vekil) sınıfların sunduğu imkanları kullanmasını sağlayan tasarım desenidir.
 
-
-
 Uygulama boyunca belirli bir işlemlerimizi yerine getiren sınıflarımız mevcuttur. Sınıf örneklerimizi kullanırken kimi işlemleri kontrol etmek gerekiyor. Bu kontroller, erişimin kısıtlı olması gibi işlemler olabilir. Bunların yanı sıra oluşturulması maliyetli olan nesnelerin birden fazla oluşturulmamasının kontrolü ya da o nesneye erişmeden önce güvenlik gereği işlemlerin kayıt altına alınması gibi işlemler de gerçekleştirilebilir. Proxy tasarım deseni, buradan bizlere gerçek nesneye erişmeden önce gerekli işlemleri yapmamızı sağlar. Aşağıda bu tasarım desenine ait UML diyagramı görülmektedir.
 
  ![proxy-uml](./images/proxy-uml.png)
-
-
 
 - **Service:** Operasyonel işlemlerin tanımlandığı arayüzdür. İstemci bu arayüz ile ilgilenmektedir.
 
@@ -1837,11 +1717,7 @@ Uygulama boyunca belirli bir işlemlerimizi yerine getiren sınıflarımız mevc
 
 - **ProxtService:** İstemcinin muhatabı olacağı sınıftır, `ConcreteService`  sınıfına direkt erişimi engeller ve bu sınıf örneğinin referansını tutar.
 
-
-
 Senaryo olarak COVID-19 virüsünden dolayı maske siparişi verildiğini ve maske siparişi verilmeden önce vatandaşa ait T.C kimlik numarası ve adres doğrulamasının yapıldığı düşünülsün.
-
-
 
 C# Kod Örneği:
 
@@ -1930,14 +1806,13 @@ orderableMask.CreateOrder(semanur);
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
 ### Behavioral (Davranışsal)
 
 > Davranışsal tasarım desenleri, nesneler arası ortak haberleşmeyi efektif ve esnek bir yapıya getirmemizi  sağlar.
 
-
 - [Chain of Responsibility]()
 - [Command]()
+- [Interpreter]()
 - [Iterator]()
 - [Mediator]()
 - [Memento]()
@@ -2103,30 +1978,162 @@ gibi faydaları görebilmekteyiz.
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
+#### 🈂️ Interpreter
+
+> Interpreter tasarım deseni, belli bir düzen veya kurala göre sıralanmış verilerin, yorumlanarak istenilen çıktı üretmesini sağlar.
+
+Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
+
+![ ](./images/interpreter-uml.png)
+
+- **Expression:** Yorumlama işleminin tanımlandığı arayüz.
+
+- **TerminalExpression:** Dil bilgisindeki terminal ifadeler üzerinde işlem yapar.
+
+- **Context:** Yorumlanacak olan içerik.
+
+Senaryo olarak bir projeye başlayacağımızı ve proje ekibinin verilerinin bir dizgi olarak geldiğini;
+
+- Geliştirici: G karakteri ve 4000 malitet.
+
+- Muhasebeci: M karakteri ve 3000 maliyet.
+
+- Takım Lideri: L karakteri ve 7000 maliyet.
+
+varsayalım. Örnek senaryo olarak **GGML** olarak gelen bir dizginin; 2 geliştirici, 1 muhasebeci, 1 takım lideri olarak toplamda 18000 maliyet oluşturduğu anlaşılmaktadır. Bu işlemleri yapan kodu Interpreter tasarım deseni kullanarak gerçekleştirelim.
+
+C# Kod Örneği:
+
+```csharp
+// Yorumlanacak olan içeriktir.
+// UML diyagramındaki Context sınıfına denk gelir.
+class Context
+{
+    public string formula;
+    public int totalPoint;
+
+}
+```
+
+```csharp
+// Yorumlama işleminin tanımlandığı arayüz.
+// UML diyagramındaki Expression arayüzüne denk gelmektedir.
+interface JobExpression
+{
+    void Interpret(Context context);
+}
+```
+
+```csharp
+// Dil bilgisindeki terminal ifadeler üzerinde işlem yapar.
+// UML diyagramındaki TerminalExpression sınıfına denk gelmektedir.
+class TeamLeadExpression : JobExpression
+{
+    public void Interpret(Context context)
+    {
+        if (context.formula.Contains('L'))
+        {
+            context.totalPoint += 7000;
+        }
+    }
+}
+```
+
+```csharp
+// Dil bilgisindeki terminal ifadeler üzerinde işlem yapar.
+// UML diyagramındaki TerminalExpression sınıfına denk gelmektedir.
+class AccountingExpression : JobExpression
+{
+    public void Interpret(Context context)
+    {
+        if (context.formula.Contains('M'))
+        {
+            context.totalPoint += 3000;
+        }
+    }
+}
+```
+
+```csharp
+// Dil bilgisindeki terminal ifadeler üzerinde işlem yapar.
+// UML diyagramındaki TerminalExpression sınıfına denk gelmektedir.
+class DeveloperExpression : JobExpression
+{
+    public void Interpret(Context context)
+    {
+        if (context.formula.Contains('G'))
+        {
+            context.totalPoint += 4000;
+        }
+    }
+}
+```
+
+```csharp
+class JobManager
+{
+    public List<IJobExpression> CreateExpressionTree(string formula)
+    {
+        List<IJobExpression> tree = new List<IJobExpression>();
+
+        foreach (char role in formula)
+        {
+            switch (role)
+            {
+                case 'G':
+                    tree.Add(new DeveloperExpression());
+                    break;
+                case 'M':
+                    tree.Add(new AccountingExpression());
+                    break;
+                case 'L':
+                    tree.Add(new TeamLeadExpression());
+                    break;
+                default:
+                    throw new Exception("Unexpected role!");
+            }
+        }
+        return tree;
+    }
+
+    public void RunExpression(Context context)
+    {
+        foreach (IJobExpression expression in CreateExpressionTree(context.formula))
+        {
+            expression.Interpret(context);
+        }
+    }
+}
+```
+
+```csharp
+Context context = new Context();
+context.formula = "GGML";
+
+JobManager jobManager = new JobManager();
+jobManager.RunExpression(context);
+
+Console.WriteLine($"{context.formula} :> {context.totalPoint}");
+// output: GGML :> 18000
+```
+
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
+ 
 
 #### 🚶‍♂️ Iterator
 
 > Iterator tasarım deseni, koleksiyon üzerindeki elemanların üzerinde dolaşmak için kullanılan tasarım desenidir.
 
-
-
 Uygulamalarımızı geliştirirken verilerimizi bir yerlerde tutma gereği duyarız. Burada birçok seçenek vardır. Ağaç, liste, kuyruk, yığın gibi. Liste gibi yapılarda dolaşmak, verileri elde etmek kolaydır fakat iş kompleks yapılara doğru gittiğinde veri üzerinde dolanmak biraz daha zorlaşabiliyor. 
-
-
 
 ![tree traversal](./images/tree%20traversal.png)
 
 Örneğin; Ağaç yapısını kullandığınızı ve veri üzerinde dolanma işlemleri için **inorder** seçeneğini seçtiniz. Fakat başka bir zaman mecburi bir değişiklikten sonra arama yönteminizi **postorder** olarak değiştirdiniz. Burada sürekli bir değişim mevcuttur. Bunları soyutlamak, değişikliğe adapte olmak gibi bir çok işlemleri Iterator tasarım deseni ile gerçekleştirilebilmektedir.
 
-
-
 Iterator tasarım deseninin en önemli özelliği gezdiği koleksiyonun ne olduğunu bilmemesidir yani iterasyon işlemlerini gerçekleştirmek üzere kurguludur. Böylece kullandığı veri yapısının ve çalışma tarzının uygulamanın diğer kısımları ile olan bağlantılarını en aza indirilir. Bu iterasyon işlemlerinin gerçekleştiği yapı; liste, ağaç, kuyruk vs. olabilir. 
 
-
-
 Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
-
-
 
 ![iterator-uml](./images/iterator-uml.png)
 
@@ -2138,11 +2145,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 - **ConcreteAggregate:** `Aggregate` arayüzünü uygular ve `Iterator` arayüzünü uygulayan sınıf örneği üretir.
 
-
-
 Senaryo olarak elimizde bir çalışan listesi olduğu ve bu liste üzerinde işlemler yapıldığı varsayılsın.
-
-
 
 C# Kod Örneği:
 
@@ -2278,25 +2281,15 @@ while (iterator.HasNext())
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
 #### 🗼 Mediator
 
 > Mediator tasarım deseni, aynı tipteki veya aynı arayüzü uygulayan nesneler arasında iletişimi sağlayan tasarım desenidir.
 
-
-
 Nesneler arasında direkt iletişim kurmaktansa, ortaya bir ara sınıf (Mediator) koyarak tüm haberleşme işlerini bu ortak nesne üzerinden gerçekleştirerek direkt olarak birbirileri ile haberleşmelerini engellemektir bu desendeki amacımız. Bunların yanı sıra sınıfların sayısı arttıkça, aralarındaki bağımlılıklar da artar, uygulamanın bakımı ve değiştirilmesi zorlaşır. Mediator tasarım deseni,  bu sınıflar arasındaki bağımlılıkları azaltmaya ve aralarındaki iletişimi kolaylaştırmaya da yarar.
-
-
 
 Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
-
-
 ![mediator-uml](./images/mediator-uml.png)
-
-
 
 - **Mediator:** `Colleague` nesneler arasındaki iletişim arayüzünü tanımlar.
 
@@ -2306,11 +2299,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 - **ConcreteColleague:** `Colleague` arayüzünü uygular ve diğer `Mediator` sayesinde diğer `Colleague`  sınıf örnekleri ile iletişim kurmaya çalışır.
 
-
-
 Senaryo olarak online bir sohbet odası olduğu ve bu odada kullanıcıların 1-1 görüşme yaptıkları kabul edilsin. Desen gereği kullanıcılar direkt birbirleri ile iletişim kuramayacakları için işlemler `Mediator `üzerinden gerçekleştirilecektir.
-
-
 
 C# Kod Örneği:
 
@@ -2431,7 +2420,6 @@ sema.SendMessage("Sanane be?", yusuf.id);
 ```
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
 
 #### ↪️ Memento
 
@@ -2593,15 +2581,9 @@ Aşağıda bu tasarım desenine ait UML diyagramı bulunmaktadır.
 
 - **ConcreteObservable:** `Observer` sınıfından türerler.
 
-
-
 Senaryo olarak kullanıcılarımızın olduğunu ve bu kullanıcıların fiyatını takip ettiği bir ürün olduğunu farz edelim. Ürün fiyatı değiştikten sonra takip eden kullanıcılara bir mesaj gittiğini düşünelim.
 
-
-
 C# Kod Örneği:
-
-
 
 ```csharp
 // Değişimden etkilenecek, izleyecek olan sınıfların uyguladığı arayüzdür.
@@ -2721,26 +2703,17 @@ samsung.ChangePrice();
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
-
 #### 🤔 State
 
 > State tasarım deseni, bir nesnenin iç durumu değiştiğinde meydana gelecek değişimler sonrası çalışma zamanında dinamik olarak farklı davranışları sergileyebilmesini sağlayan bir tasarım desenidir.
 
 State tasarım desenini **biçimsel diller ve otomatalar, durum makinaları** ile de ifade edilebilmektedir. Otomatalarda da olduğu gibi kodlarımızda da durumlar söz konusudur. Bir durumunda başka bir duruma gitmek, orada tekrar etmek ya da geriye dönmek gibi durumlarımız ve bu durumları gerçekleştirirken ki davranışlarımız mevcuttur.
 
-
-
 Yazılım tarafından olaya baktığımızda aslında state diagramları ile ifade edilebilen her nesne için state deseninin uygulanabileceğini düşünebiliriz. Örneğin uygulamanın çalıştığı makinenin bellek durumları state kalıbına uygun olarak tasarlanabilir. Makinenin normal seviyede olması, sistem kaynaklarının çok tüketilmesi sonucu alarm haline geçmesi veya alarm verilmeden önce uyarı moduna geçmesi söz konusu olabilir. Bu durumlar arasındaki geçişler aslında bilgisayarın bazı iç değerlerine göre gerçeklenir. Memory, CPU, Running Process ölçümleri birer kriter olabilir ve örneğin Computer isimli bir nesnenin iç durumunu ifade edebilir.
-
-
 
 Bu aşamada, bundan sonra **internal state'** i taşıyan yani davranışı değişecek olan nesneye **Context** dediğimizi düşünelim. Birden fazla davranış ve doğal olarak durum olabileceğinden, **Context'** in farklı durumlara erişebilip aralardaki **geçişleri(Transitions)** sağlayabilmesi gerekir. Bu durumda, **Context** tipinin tüm durumlar için ortak bir arayüz sunan başka bir tip ile *(buna State diyebiliriz)*  **Aggregation** ilişkisini sağlaması uygundur.
 
 **State** tipinin kendisi aslında, **Context** tipinin belli bir durumu ile ilişkilendirilmiş davranışların kapsüllenmesi için bir arayüz sunmaktadır. Bu arayüz sunumu **aslı durum tipleri(Concrete State)** tarafından değerlendirilebilir. Bu tanımlar doğrultusunda bu tasarım desenine ait UML diyagramı aşağıdaki gibi olacaktır.
-
-
 
 ![state-uml](./images/state-uml.png)
 
@@ -2749,8 +2722,6 @@ Bu aşamada, bundan sonra **internal state'** i taşıyan yani davranışı değ
 - **ConcreteState:**  `State` arayüzünü uygular, bu sayede farklı durumlar meydana gelir.
 
 - **Context:** Durumu izlenecek olan nesnedir.
-
-
 
 Senaryol olarak yiyecek otomatları düşünülebilir. Bu otomatlar için sıralı durumlar mevcuttur. Bunlar; 
 
@@ -2762,11 +2733,7 @@ Senaryol olarak yiyecek otomatları düşünülebilir. Bu otomatlar için sıral
 
 4. Ürünün teslim edilmesi durumu => **DeliveryState**
 
-
-
 C# Kod Örneği:
-
-
 
 ```csharp
 // Davranışların tanımlandığı soyut sınıftır.
@@ -2886,20 +2853,15 @@ vendingMachine.RequestProduct("COVID-19 MASKE", 2);
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
 #### 💪 Strategy
 
 > Strategy tasarım deseni, bir algoritma ailesi tanımlamamızı, her birini ayrı bir sınıfa koymamızı ve nesnelerinin birbiriyle değiştirilebilir hale getirmenizi sağlayan davranışsal bir tasarım modelidir.
 
 Bir işlemin birden fazla yapılması, çalışma zamanında algoritma değişikliği gibi durumlarda kullanılır, karışık if-else durumundan da kurtarır. Soyutlamadan dolayı da `Loosely Coupled` bir uygulama halini alır.
 
-
-
 ![stragety-uml](./images/stragety-uml.png)
 
 Senaryo olarak e-ticaret projesinin ödeme kısmını düşünelim. Ödeme metotları arasında; kredi kartı, Paypal gibi seçenekler mevcuttur. 
-
-
 
 C# Kod Örneği:
 
@@ -3273,9 +3235,8 @@ daily.Accept(jsonExportVisitor);
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
 # Kaynakçalar
+
 - [Java Design Patterns - A Tour with 23 Gang of Four Design Patterns in Java](https://www.amazon.com/Java-Design-Patterns-Vaskaran-Sarcar/dp/1484218019)
 - [https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial](https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial)
 - [https://springframework.guru/gang-of-four-design-patterns/bridge-pattern/](https://springframework.guru/gang-of-four-design-patterns/bridge-pattern/)
@@ -3288,3 +3249,4 @@ daily.Accept(jsonExportVisitor);
 - [https://www.gencayyildiz.com/blog/c-abstract-factory-design-patternabstract-factory-tasarim-deseni/](https://www.gencayyildiz.com/blog/c-abstract-factory-design-patternabstract-factory-tasarim-deseni/)
 - [https://www.gencayyildiz.com/blog/c-prototype-design-pattern-prototip-tasarim-deseni/](https://www.gencayyildiz.com/blog/c-prototype-design-pattern-prototip-tasarim-deseni/)
 - [https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-State](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-State)
+- [https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Interpreter](https://www.buraksenyurt.com/post/Tasarc4b1m-Desenleri-Interpreter)
