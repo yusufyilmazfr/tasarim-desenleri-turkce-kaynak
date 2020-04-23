@@ -329,7 +329,9 @@ interface IWorker {
 
     void pay() throws Exception;
 }
+```
 
+```java
 class RobotWorker implements IWorker {
 
     @Override
@@ -361,15 +363,21 @@ JAVA Kod Örneği:
 interface IWorker {
     void work();
 }
+```
 
+```java
 interface IEatableWorker {
     void eat();
 }
+```
 
+```java
 interface IPayableWorker {
     void pay();
 }
+```
 
+```java
 class Worker implements IWorker, IEatableWorker, IPayableWorker {
 
     @Override
@@ -387,7 +395,9 @@ class Worker implements IWorker, IEatableWorker, IPayableWorker {
         ...
     }
 }
+```
 
+```java
 class RobotWorker implements IWorker {
     @Override
 
@@ -571,14 +581,18 @@ public class User
     // Burada bildirimin gideceği kullanıcıya
     // ait bilgiler bulunacaktır.
 }
+```
 
+```csharp
 // UML diyagramındaki IProduct arayüzümüze denk gelmektedir.
 // İlişkili sınıflarımız bu arayüzü uygulayacaktır.
 interface INotify
 {
     void SendNotification(User user);
 }
+```
 
+```csharp
 // UML diyagramındaki ConcreteProduct sınıflarına denk gelmektedir.
 class MailNotify : INotify
 {
@@ -587,7 +601,9 @@ class MailNotify : INotify
         // Mail gönderme operasyonu.
     }
 }
+```
 
+```csharp
 // UML diyagramındaki ConcreteProduct sınıflarına denk gelmektedir.
 public class SmsNotify : INotify
 {
@@ -596,7 +612,9 @@ public class SmsNotify : INotify
         // SMS gönderme operasyonu.
     }
 }
+```
 
+```csharp
 // UML diyagramındaki ProductFactory sınıfına denk gelmektedir.
 class NotifyFactory
 {
@@ -662,7 +680,9 @@ public abstract class Command
 {
     public abstract void ExecuteCommand(string query);
 }
+```
 
+```csharp
 // Command sınıfından türer.
 // UML'deki ConcreteProduct sınıfına denk gelmektedir.
 class MySQLCommand : Command
@@ -673,7 +693,9 @@ class MySQLCommand : Command
         // Gerekli operasyonel işlemler...
     }
 }
+```
 
+```csharp
 // Command sınıfından türer.
 // UML'deki ConcreteProduct sınıfına denk gelmektedir.
 class OracleCommand : Command
@@ -684,7 +706,9 @@ class OracleCommand : Command
         // Gerekli operasyonel işlemler...
     }
 }
+```
 
+```csharp
 // Soyut sınıfımızdır.
 // UML'deki Product sınıfına denk gelmektedir.
 abstract class Connection
@@ -692,7 +716,9 @@ abstract class Connection
     public abstract bool OpenConnection();
     public abstract bool CloseConnection();
 }
+```
 
+```csharp
 // Connection sınıfından türer.
 // UML'deki ConcreteProduct sınıfına denk gelmektedir.
 class MySQLConnection : Connection
@@ -710,7 +736,9 @@ class MySQLConnection : Connection
         return true;
     }
 }
+```
 
+```csharp
 // Connection sınıfından türer.
 // UML'deki ConcreteProduct sınıfına denk gelmektedir.
 class OracleConnection : Connection
@@ -728,7 +756,9 @@ class OracleConnection : Connection
         return true;
     }
 }
+```
 
+```csharp
 // Oluşturulacak ürünlere ait metotları içerir.
 // UML'deki AbstractFactory sınıfına denk gelmektedir.
 interface IDatabaseFactory
@@ -736,7 +766,9 @@ interface IDatabaseFactory
     Connection CreateConnection();
     Command CreateCommand();
 }
+```
 
+```csharp
 // Oracle için ilişkili nesneler üretildi.
 // UML'deki ConcreteFactory sınıfına denk gelmektedir.
 class OracleDatabaseFactory : IDatabaseFactory
@@ -750,7 +782,9 @@ class OracleDatabaseFactory : IDatabaseFactory
         return new OracleConnection();
     }
 }
+```
 
+```csharp
 // MySQL için ilişkili nesneler üretildi.
 // UML'deki ConcreteFactory sınıfına denk gelmektedir.
 class MySQLDatabaseFactory : IDatabaseFactory
@@ -765,7 +799,9 @@ class MySQLDatabaseFactory : IDatabaseFactory
         return new MySQLConnection();
     }
 }
+```
 
+```csharp
 // IDatabaseFactory arayüzünü uygulayan sınıfları
 // Kullanarak temel operasyonel işlemleri yapan bir sınıf.
 class CustomOperation
@@ -977,7 +1013,9 @@ JAVA Kod Örneği:
 interface IClonablePrototype<TPrototype> extends Cloneable {
     TPrototype clone() throws CloneNotSupportedException;
 }
+```
 
+```java
 // Employee sınıfına klonlama yeteneği kazandırmak için tanımladığımız
 // arayüzü uyguladık.
 public class Employee implements IClonablePrototype<Employee> {
@@ -1020,7 +1058,9 @@ interface IClonablePrototype<TPrototype>
 {
     TPrototype Clone();
 }
+```
 
+```csharp
 // Employee sınıfına klonlama yeteneği kazandırmak için tanımladığımız 
 // arayüzü uyguladık.
 
@@ -1090,7 +1130,9 @@ interface IJsonSerializer
 {
     public string SerializeObject(object obj);
 }
+```
 
+```csharp
 // Sisteme daha sonradan dahil olan yapı.
 // Sistemin kullandığı arayüzü uygulamamaktadır.
 // UML diyagramındaki Adaptee'ye denk gelmektedir.
@@ -1104,7 +1146,9 @@ class CustomSerializer
 
     }
 }
+```
 
+```csharp
 // Daha sonradan dahil edilen yapının sisteme adepte edilmesi işlemi.
 // Sistemin kullandığı arayüzü uygular.
 // Bu sayede IJsonSerializer'i uygulayan bir sınıf örneği istendiğinde
@@ -2028,7 +2072,6 @@ class Image
 
 ```csharp
 // Zincirin bir sonraki halkasının referansının tutulduğu sınıftır.
-
 // İşlemi gerçekleştirecek olan metot tanımı bulunur.
 // UML diyagramındaki BaseHandler sınıfına denk gelmektedir.
 abstract class BaseHandler
@@ -2041,7 +2084,9 @@ abstract class BaseHandler
 
     public abstract void HandleRequest(Image image);
 }
+```
 
+```csharp
 // JPEG dosyalarını dönüştüren sınıf.
 // UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
 class JPEGHandler : BaseHandler
@@ -2060,7 +2105,9 @@ class JPEGHandler : BaseHandler
         }
     }
 }
+```
 
+```csharp
 // JPG dosyalarını dönüştüren sınıf.
 // UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
 class JPGHandler : BaseHandler
@@ -2079,7 +2126,9 @@ class JPGHandler : BaseHandler
         }
     }
 }
+```
 
+```csharp
 // Herhangi bir tipteki dosyayı dönüştüren sınıf.
 // UML diyagramındaki ConcreteHandler sınıfına denk gelmektedir.
 class CustomHandler : BaseHandler
@@ -2121,21 +2170,13 @@ gibi faydaları görebilmekteyiz.
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
 
-
-
 #### ⚔ Command
 
 > Command tasarım deseni, kullanıcı isteklerini gerçekleştiren kod yapısını sarmallayarak nesneler halinde saklanmasını daha sonra da bu isteklerin gerçekleştirilmesini veya geri alınmasını sağlayan tasarım desenidir.
 
-
-
 Nesne üzerinde bir işleminin nasıl yapıldığını bilmediğimiz ya da kullanılmak istenen nesneyi tanımadığımız durumlarda kullanılır.
 
-
-
 Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
-
-
 
 ![ ](./images/command-uml.png)
 
@@ -2147,11 +2188,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 - **Receiver:** `Client` tarafının asıl iletişime geçeceği sınıftır.
 
-
-
 Senaryo olarak bir ürüne ait stok takibi verilen basit bir sistem olduğunu var sayalım. Burada stok ile ilgili işlemler bu tasarım desenine göre yapılsın. 
-
-
 
 C# Kod Örneği:
 
@@ -2281,11 +2318,7 @@ stockController.PlaceOrders();
 //  Stock: iPhone, 200 sold!
 ```
 
-
-
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
-
-
 
 #### 🈂️ Interpreter
 
@@ -3179,7 +3212,9 @@ interface IPayment
 {
     void Pay(int amount);
 }
+```
 
+```csharp
 // UML diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
 // UML diyagramındaki Strategy arayüzüne denk gelen arayüzü uyguluyor.
 class PaypalPayment : IPayment
@@ -3199,7 +3234,9 @@ class PaypalPayment : IPayment
         Console.WriteLine("Paid by Paypal.");
     }
 }
+```
 
+```csharp
 // UML diyagramındaki ConcreteStrategy sınıfına denk gelmektedir.
 // UML diyagramındaki Strategy arayüzüne denk gelen arayüzü uyguluyor.
 class CreditCartPayment : IPayment
