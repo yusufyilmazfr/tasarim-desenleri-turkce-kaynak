@@ -8,57 +8,57 @@
 
 ### İçindekiler
 
-1. [Giriş ve Tanışma]()
-2. [Nesne Yönelimli Programlama Nedir?]()
-   - [Sınıf Hiyerarşileri]()
-   - [Nesne Yönelimli Programlama İlkeleri]()
-     - [Abstraction (Soyutlama)]()
-     - [Encapsulation (Kapsülleme)]()
-     - [Inheritance (Kalıtım)]()
-     - [Polymorphism (Çok Biçimlilik)]()
-   - [Nesneler Arası İlişkiler]()
-     - [Inheritance (Kalıtım)]()
-     - [Implementation]()
-     - [Association (Bağlantı)]()
-     - [Dependency (Bağımlılık)]()
-     - [Composition(Bileşim)]()
-     - [Aggregation(İçerme)]()
-3. [S.O.L.I.D Nedir?]()
-   - [Single Responsibility (Tek Sorumluluk Prensibi)]()
-   - [Open/Closed Principle (Açık Kapalı Prensibi)]()
-   - [Liskov Substitution (Liskov’un Yerine geçme Prensibi)]()
-   - [Interface Segregation (Arayüz Ayrımı Prensibi)]()
-   - [Dependency Inversion (Bağımlılıkların Tersine Çevrilmesi Prensibi)]()
-4. [Tasarım Deseni Nedir?]()
-5. [Tasarım Desenleri]()
-   - [Creational  (Oluşturucu)]()
-     - [Singleton]()
-     - [Factory]()
-     - [Abstract Factory]()
-     - [Builder]()
-     - [Prototype]()
-   - [Structural (Yapısal)]()
-     - [Adapter]()
-     - [Bridge]()
-     - [Composite]()
-     - [Decorator]()
-     - [Facade]()
-     - [Flyweight]()
-     - [Proxy]()
-   - [Behavioral (Davranışsal)]()
-     - [Chain of Responsibility]()
-     - [Command]()
-     - [Interpreter]()
-     - [Iterator]()
-     - [Mediator]()
-     - [Memento]()
-     - [Observer]()
-     - [State]()
-     - [Strategy]()
-     - [Template Method]()
-     - [Visitor]()
-6. [Kapanış]()
-7. [Kaynakçalar]()
+1. [Giriş ve Tanışma](#giriş-ve-tanışma)
+2. [Nesne Yönelimli Programlama Nedir?](#nesne-yönelimli-programlama-nedir)
+   - [Sınıf Hiyerarşileri](#sınıf-hiyerarşileri)
+   - [Nesne Yönelimli Programlama İlkeleri](#nesne-yönelimli-programlama-i̇lkeleri)
+     - [Abstraction (Soyutlama)](#encapsulation-kapsülleme)
+     - [Encapsulation (Kapsülleme)](#abstraction-soyutlama)
+     - [Inheritance (Kalıtım)](#inheritance-kalıtım)
+     - [Polymorphism (Çok Biçimlilik)](#polymorphism-çok-biçimlilik)
+   - [Nesneler Arası İlişkiler](#nesneler-arası-i̇lişkiler)
+     - [Inheritance (Kalıtım)](#inheritance)
+     - [Implementation](#implementation)
+     - [Association (Bağlantı)](#association-bağlantı)
+     - [Dependency (Bağımlılık)](#dependency-bağımlılık)
+     - [Composition(Bileşim)](#compositionbileşim)
+     - [Aggregation(İçerme)](#aggregationi̇çerme)
+3. [S.O.L.I.D Nedir?](#solid-nedir)
+   - [Single Responsibility (Tek Sorumluluk Prensibi)](#single-responsibility-principle-tek-sorumluluk-prensibi)
+   - [Open/Closed Principle (Açık Kapalı Prensibi)](#openclosed-principle-açık-kapalı-prensibi)
+   - [Liskov Substitution (Liskov’un Yerine geçme Prensibi)](#liskov-substitution-principle-liskovun-yerine-geçme-prensibi)
+   - [Interface Segregation (Arayüz Ayrımı Prensibi)](#interface-segregation-principle-arayüz-ayrımı-prensibi)
+   - [Dependency Inversion (Bağımlılıkların Tersine Çevrilmesi Prensibi)](#dependency-inversion-principle-bağımlılıkların-tersine-çevrilmesi-prensibi)
+4. [Tasarım Deseni Nedir?](#tasarım-deseni-nedir)
+5. [Tasarım Desenleri](#tasarım-desenleri)
+   - [Creational  (Oluşturucu)](#creational-oluşturucu)
+     - [Singleton](#-singleton)
+     - [Factory](#-factory)
+     - [Abstract Factory](#-abstract-factory)
+     - [Builder](#%EF%B8%8F-builder)
+     - [Prototype](#-prototype)
+   - [Structural (Yapısal)](#structural-yapısal)
+     - [Adapter](#-adapter)
+     - [Bridge](#-bridge)
+     - [Composite](#-composite)
+     - [Decorator](#-decorator)
+     - [Facade](#-facade)
+     - [Flyweight](#%EF%B8%8F-flyweight)
+     - [Proxy](#-proxy)
+   - [Behavioral (Davranışsal)](#behavioral-davranışsal)
+     - [Chain of Responsibility](#%EF%B8%8F-chain-of-responsibility)
+     - [Command](#-command)
+     - [Interpreter](#%EF%B8%8F-interpreter)
+     - [Iterator](#%EF%B8%8F-iterator)
+     - [Mediator](#-mediator)
+     - [Memento](#%EF%B8%8F-memento)
+     - [Observer](#-observer)
+     - [State](#-state)
+     - [Strategy](#-strategy)
+     - [Template Method](#-template-method)
+     - [Visitor](#%EF%B8%8F-visitor)
+6. [Kapanış](#kapan%C4%B1%C5%9F)
+7. [Kaynakçalar](#kaynakçalar)
 
 ## Giriş ve Tanışma
 
@@ -480,11 +480,11 @@ Tasarım desenleri; yazılım tasarımında, problemlerde karşımıza sıkça �
 
 > Oluşturucu tasarım desenleri, bir nesnenin ya da grubun esnek ve tekrar kullanılabilir biçimde nasıl oluşturucağı ile ilgilenir.
 
-- [Singleton]()
-- [Factory]()
-- [Abstract Factory]()
-- [Builder]()
-- [Prototype]()
+- [Singleton](#-singleton)
+- [Factory](#-factory)
+- [Abstract Factory](#-abstract-factory)
+- [Builder](#%EF%B8%8F-builder)
+- [Prototype](#-prototype)
 
 #### 💎 Singleton
 
@@ -1057,13 +1057,13 @@ Console.WriteLine(gulizar == cloneGulizar); //output: false
 
 > Yapısal tasarım desenleri, nesnelerin birbirleriyle yapısal olarak nasıl birleşecekleri üzerine durur.
 
-- [Adapter]()
-- [Bridge]()
-- [Composite]()
-- [Decorator]()
-- [Facade]()
-- [Flyweight]()
-- [Proxy]()
+- [Adapter](#-adapter)
+- [Bridge](#-bridge)
+- [Composite](#-composite)
+- [Decorator](#-decorator)
+- [Facade](#-facade)
+- [Flyweight](#%EF%B8%8F-flyweight)
+- [Proxy](#-proxy)
 
 #### 🔌 Adapter
 
@@ -1953,17 +1953,17 @@ orderableMask.CreateOrder(semanur);
 
 > Davranışsal tasarım desenleri, nesneler arası ortak haberleşmeyi efektif ve esnek bir yapıya getirmemizi  sağlar.
 
-- [Chain of Responsibility]()
-- [Command]()
-- [Interpreter]()
-- [Iterator]()
-- [Mediator]()
-- [Memento]()
-- [Observer]()
-- [State]()
-- [Strategy]()
-- [Template Method]()
-- [Visitor]()
+- [Chain of Responsibility](#%EF%B8%8F-chain-of-responsibility)
+- [Command](#-command)
+- [Interpreter](#%EF%B8%8F-interpreter)
+- [Iterator](#%EF%B8%8F-iterator)
+- [Mediator](#-mediator)
+- [Memento](#%EF%B8%8F-memento)
+- [Observer](#-observer)
+- [State](#-state)
+- [Strategy](#-strategy)
+- [Template Method](#-template-method)
+- [Visitor](#%EF%B8%8F-visitor)
 
 #### ⛓️ Chain of Responsibility
 
@@ -2123,7 +2123,7 @@ gibi faydaları görebilmekteyiz.
 
 
 
-⚔ Command
+#### ⚔ Command
 
 > Command tasarım deseni, kullanıcı isteklerini gerçekleştiren kod yapısını sarmallayarak nesneler halinde saklanmasını daha sonra da bu isteklerin gerçekleştirilmesini veya geri alınmasını sağlayan tasarım desenidir.
 
@@ -3541,6 +3541,8 @@ daily.Accept(jsonExportVisitor);
 ```
 
 *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+
+# Kapanış
 
 # Kaynakçalar
 
