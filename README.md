@@ -3682,6 +3682,12 @@ daily.Accept(jsonExportVisitor);
 
 # Kapanış
 
+**Design Patterns: Elements of Reusable Object-Oriented Software** kitabındaki temel 23 tasarım deseninin konu anlatımı ve birçok dilde olan uygulamalarını bitirdik. Kaynak üzerinde yanlış olan, düzeltilmesini istediğiniz yerleri [GitHub]([https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak) hesabı üzerinden pull request atarak sizler de kaynağa katkıda bulunabilirsiniz.
+
+Bu kaynak [Yusuf Yılmaz](https://github.com/yusufyilmazfr/) tarafından hazırlanmıştır. Bu kaynağın en güncel PDF ve konu örneklerine [https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak) üzerinden erişebilirsiniz.
+
+*Bu kaynağı, COVID-19 ile mücadele ettiği için aylardır göremediğim sevgili ablama ve değerli aileme adıyorum. Nice güzel günlere.*
+
 # Kaynakçalar
 
 - [Java Design Patterns - A Tour with 23 Gang of Four Design Patterns in Java](https://www.amazon.com/Java-Design-Patterns-Vaskaran-Sarcar/dp/1484218019)
