@@ -3688,7 +3688,7 @@ Bu kaynak [Yusuf Yılmaz](https://github.com/yusufyilmazfr/) tarafından hazırl
 
 *Bu kaynağı, COVID-19 ile mücadele ettiği için aylardır göremediğim sevgili ablama ve değerli aileme adıyorum. Nice güzel günlere.*
 
-# Kaynakçalar
+# Kaynakça
 
 - [Java Design Patterns - A Tour with 23 Gang of Four Design Patterns in Java](https://www.amazon.com/Java-Design-Patterns-Vaskaran-Sarcar/dp/1484218019)
 - [https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial](https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial)
