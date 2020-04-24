@@ -645,22 +645,31 @@ Desenin yukarıdaki durumu geçerli gibi duruyor fakat multi-thread uygulamalard
 C# dili için `GetInstance()` metotunu düzenleyecek olursak aşağıdaki hali alacaktır.
 
 ```csharp
-public static Database GetInstance()
+public class Database
 {
-    if (database == null)
+    private static Database database;
+    private static Object _lockObject = new object();
+    
+    private Database()
     {
-        var lockObject = new object();
 
-        lock (lockObject)
-        {
-            if (database == null)
-            {
-                database = new Database();
-            }
-        }
     }
 
-    return database;
+    public static Database GetInstance()
+    {
+        if (database == null)
+        {
+            lock (_lockObject)
+            {
+                if (database == null)
+                {
+                    database = new Database();
+                }
+            }
+        }
+
+        return database;
+    }
 }
 ```
 
