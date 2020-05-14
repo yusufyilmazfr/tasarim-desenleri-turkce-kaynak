@@ -664,7 +664,7 @@ public static Database GetInstance()
 }
 ```
 
-  *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+  *Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/singleton) bulabilirsiniz.*
 
 #### 🏭 Factory
 
