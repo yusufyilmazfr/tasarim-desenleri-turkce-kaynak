@@ -1192,7 +1192,7 @@ Employee cloneGulizar = gulizar.Clone();
 Console.WriteLine(gulizar == cloneGulizar); //output: false
 ```
 
-*Bu tasarım deseninin diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/builder) bulabilirsiniz.*
+*Bu tasarım deseninin diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/prototype) bulabilirsiniz.*
 
 ### Structural (Yapısal)
 
