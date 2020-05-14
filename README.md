@@ -750,7 +750,7 @@ notify.SendNotification(new User());
 
 Yukarıdaki kodda da görüldüğü gibi `INotify` arayüzünü uygulayan sınıfların oluşturulması istemciden soyutlanmıştır.
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/factory) bulabilirsiniz.*
 
 #### 🏭🏭 Abstract Factory
 
@@ -932,7 +932,7 @@ CustomOperation customOperation = new CustomOperation(new OracleDatabaseFactory(
 customOperation.RemoveById(1);
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/abstract-factory) bulabilirsiniz.*
 
 #### ⛏️ Builder
 
@@ -1088,7 +1088,7 @@ Console.WriteLine($"{lesson.name} - {lesson.price} - {lesson.discountedPrice}");
 // output: Artificial Intelligence -  Beginner to Advanced in 10 Minute. - 49,99 - 24,995
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/builder) bulabilirsiniz.*
 
 #### 🐑 Prototype
 
@@ -1192,7 +1192,7 @@ Employee cloneGulizar = gulizar.Clone();
 Console.WriteLine(gulizar == cloneGulizar); //output: false
 ```
 
-*Bu tasarım deseninin diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/builder) bulabilirsiniz.*
 
 ### Structural (Yapısal)
 
@@ -1291,7 +1291,7 @@ string serializedObject = customOperation.SerializeObject(new object());
 Console.WriteLine(serializedObject); // output: serialized with CustomSerializer
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/adapter) bulabilirsiniz.*
 
 #### 🌉 Bridge
 
@@ -1420,7 +1420,7 @@ Message emailMessage = new TextMessage(emailMessageSender);
 emailMessage.Send(); // output: EmailMessageSender: Sending email message...
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/bridge) bulabilirsiniz.*
 
 #### 🌲 Composite
 
@@ -1547,7 +1547,7 @@ items.DrawHierarchy();
 //             ---Samsung Galaxy Telefon
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/composite) bulabilirsiniz.*
 
 #### 🎺 Decorator
 
@@ -1696,7 +1696,7 @@ compressedDataSource.WriteData(new object());
 //      Compressed data was written to data.sql.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/decorator) bulabilirsiniz.*
 
 #### 📦 Facade
 
@@ -1846,7 +1846,7 @@ creditCardFacade.CreateCreditCart(duygu);
 
 Bu sayede kod kalabalığının önüne geçilmiş olundu bunun da yanı sıra eklenecek yeni bir iş kuralında istemci tarafından herhangi bir değişikliğe gidilmemesi olumlu bir artı olarak geliyor.
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/facade) bulabilirsiniz.*
 
 #### 🌫️ Flyweight
 
@@ -1989,7 +1989,7 @@ blueBox1.Draw(1, 4);
 //  Blue box drawn. 1,4
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/flyweight) bulabilirsiniz.*
 
 #### 🔍 Proxy
 
@@ -2092,7 +2092,7 @@ orderableMask.CreateOrder(semanur);
 // output: Order created to İstanbul/Sancaktepe xxx-yyy-zzz.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/proxy) bulabilirsiniz.*
 
 ### Behavioral (Davranışsal)
 
@@ -2269,7 +2269,7 @@ Bu tasarım desenini bu probleme uyarlayarak;
 
 gibi faydaları görebilmekteyiz.
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/chain-of-responsibility) bulabilirsiniz.*
 
 #### ⚔ Command
 
@@ -2419,7 +2419,7 @@ stockController.PlaceOrders();
 //  Stock: iPhone, 200 sold!
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/command) bulabilirsiniz.*
 
 #### 🈂️ Interpreter
 
@@ -2560,7 +2560,7 @@ Console.WriteLine($"{context.formula} :> {context.totalPoint}");
 // output: GGML :> 18000
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/interpreter) bulabilirsiniz.*
 
 #### 🚶‍♂️ Iterator
 
@@ -2720,7 +2720,7 @@ while (iterator.HasNext())
 //  Derya Obi
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/iterator) bulabilirsiniz.*
 
 #### 🗼 Mediator
 
@@ -2860,7 +2860,7 @@ sema.SendMessage("Sanane be?", yusuf.id);
 //  Yusuf received new message.Message: Sanane be?
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/mediator) bulabilirsiniz.*
 
 #### ↪️ Memento
 
@@ -3004,7 +3004,7 @@ Console.WriteLine(textOriginator.ToString());
 //  text: asm, cursor position: 3
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/memento) bulabilirsiniz.*
 
 #### 👓 Observer
 
@@ -3142,7 +3142,7 @@ samsung.ChangePrice();
 //  Samsung updated. Message: Samsung's price updated.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/observer) bulabilirsiniz.*
 
 #### 🤔 State
 
@@ -3292,7 +3292,7 @@ vendingMachine.RequestProduct("COVID-19 MASKE", 2);
 //  WaitingState: Otomata herhangi bir aksiyon bekliyor.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/state) bulabilirsiniz.*
 
 #### 💪 Strategy
 
@@ -3439,7 +3439,7 @@ shoppingCart.SetPaymentMethod(new CreditCartPayment("Julia Rodriguez", "43730931
 shoppingCart.Pay(); // output: Paid by credit cart.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/strategy) bulabilirsiniz.*
 
 #### 📥 Template Method
 
@@ -3538,7 +3538,7 @@ dataAnalyzer.AnalyzeDataOfLastWeek();
 //  HTML exported.
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/template-method) bulabilirsiniz.*
 
 #### 🏃‍♀️ Visitor
 
@@ -3678,7 +3678,7 @@ daily.Accept(jsonExportVisitor);
 //  Daily Magazine exported by XmlExportVisitor
 ```
 
-*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını bu tasarım deseni için oluşturulmuş klasörde bulabilirsiniz.*
+*Bu tasarım deseninin JAVA ve diğer diller için olan uygulamasını [bu tasarım deseni için oluşturulmuş klasörde](https://github.com/yusufyilmazfr/tasarim-desenleri-turkce-kaynak/tree/master/visitor) bulabilirsiniz.*
 
 # Kapanış
 
