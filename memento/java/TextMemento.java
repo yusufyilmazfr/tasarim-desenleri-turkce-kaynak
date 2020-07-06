@@ -6,3 +6,4 @@ class TextMemento {
     public String text;
     public int cursorPosition;
 }
+test
