@@ -16,16 +16,17 @@ namespace Singleton
 
         public static Database GetInstance()
         {
-            lock (lockObject)
+            if (database == null)
             {
-                if (database == null)
+                lock (lockObject)
                 {
-                    database = new Database();
+                    if (database == null)
+                    {
+                        database = new Database();
+                    }
                 }
-
-                return database;
             }
-
+            return database;
         }
     }
 }
