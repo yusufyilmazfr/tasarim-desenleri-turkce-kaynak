@@ -6,6 +6,7 @@ namespace Singleton
 {
     public class Database
     {
+        private static object lockObject = new Object();
         private static Database database;
 
         private Database()
@@ -17,8 +18,6 @@ namespace Singleton
         {
             if (database == null)
             {
-                var lockObject = new object();
-
                 lock (lockObject)
                 {
                     if (database == null)
@@ -27,7 +26,6 @@ namespace Singleton
                     }
                 }
             }
-
             return database;
         }
     }
