@@ -1425,7 +1425,7 @@ Message textMessage = new TextMessage(textMessageSender);
 textMessage.Send(); // output: TextMessageSender: Sending text message...
 
 IMessageSender emailMessageSender = new EmailMessageSender();
-Message emailMessage = new TextMessage(emailMessageSender);
+Message emailMessage = new EmailMessage(emailMessageSender);
 emailMessage.Send(); // output: EmailMessageSender: Sending email message...
 ```
 
