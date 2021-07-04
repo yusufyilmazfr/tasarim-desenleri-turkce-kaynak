@@ -16,9 +16,7 @@ func GetInstance() *database {
 	if instance == nil {
 		lock.Lock()
 		defer lock.Unlock()
-		if instance == nil {
-			instance = &database{}
-		}
+		instance = &database{}
 	}
 	return instance
 }
