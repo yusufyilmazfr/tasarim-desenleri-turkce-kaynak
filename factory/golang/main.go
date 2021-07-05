@@ -5,12 +5,12 @@ import (
 )
 
 func main() {
-	smsNotify, _ := createNotify("SMS", Notify{Content: "Awesome SMS content"})
-	mailNotify, _ := createNotify("MAIL", Notify{Content: "Awesome MAIL content"})
-	_, err := createNotify("wrong", Notify{Content: "to intifity"})
+	smsNotify, _ := CreateNotify("SMS", Notify{Content: "Awesome SMS content"})
+	mailNotify, _ := CreateNotify("MAIL", Notify{Content: "Awesome MAIL content"})
+	_, err := CreateNotify("wrong", Notify{Content: "to intifity"})
 
-	smsNotify.SendNotification(User{name: "sms lover"})
-	mailNotify.SendNotification(User{name: "mail lover"})
+	smsNotify.SendNotification(User{Name: "sms lover"})
+	mailNotify.SendNotification(User{Name: "mail lover"})
 
 	if err != nil {
 		log.Fatal(err)

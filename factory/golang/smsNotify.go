@@ -7,5 +7,5 @@ type SmsNotify struct {
 }
 
 func (n *SmsNotify) SendNotification(user User) {
-	fmt.Printf("(sms)sent a notification '%v' to: %v\n", n.Content, user.name)
+	fmt.Printf("(sms)sent a notification '%v' to: %v\n", n.Content, user.Name)
 }

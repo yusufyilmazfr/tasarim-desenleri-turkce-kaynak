@@ -10,7 +10,7 @@ func newMailNotify(n Notify) iNotify {
 	return &MailNotify{Notify: n}
 }
 
-func createNotify(notifyType string, n Notify) (iNotify, error) {
+func CreateNotify(notifyType string, n Notify) (iNotify, error) {
 	if notifyType == "SMS" {
 		return newSmsNotify(n), nil
 	} else if notifyType == "MAIL" {
