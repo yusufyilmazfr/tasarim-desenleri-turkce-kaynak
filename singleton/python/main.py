@@ -1,8 +1,8 @@
-import database
+from database import Database
 
 def main():
-    first_instance_request = database.Database()
-    second_instance_request = database.Database()
+    first_instance_request = Database()
+    second_instance_request = Database()
 
     is_equals = first_instance_request == second_instance_request
 
