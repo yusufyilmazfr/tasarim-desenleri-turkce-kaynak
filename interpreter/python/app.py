@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from context import Context
 from job_manager import JobManager
 

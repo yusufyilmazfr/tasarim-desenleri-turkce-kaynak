@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
 from custom_operation import CustomOperation
 from oracle_database_factory import OracleDatabaseFactory
 from mysql_database_factory import MysqlDatabaseFactory

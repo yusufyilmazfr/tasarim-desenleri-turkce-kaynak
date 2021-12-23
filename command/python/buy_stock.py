@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from order_command import OrderCommand
 from stock_manager import StockManager
 

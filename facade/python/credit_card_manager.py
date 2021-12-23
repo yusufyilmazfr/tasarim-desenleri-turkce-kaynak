@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 17.12.2021
 from customer import Customer
 
 

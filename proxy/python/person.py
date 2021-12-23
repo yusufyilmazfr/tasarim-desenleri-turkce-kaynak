@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 class Person:
     """
     SYB: Diger tasarim desenlerinin implementasyonundan farkli olarak

@@ -1,5 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
-
 class CustomSerializer:
     """
     Sisteme daha sonradan dahil olan yapı.

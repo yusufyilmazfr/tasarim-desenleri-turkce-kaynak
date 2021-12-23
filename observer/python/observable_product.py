@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from product_update_message import ProductUpdateMessage
 from abstract_observer_user import AbstractObserverUser
 

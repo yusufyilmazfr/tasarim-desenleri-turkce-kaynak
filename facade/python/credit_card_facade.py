@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 17.12.2021
 from customer import Customer
 from credit_card_manager import CreditCardManager
 from blacklist_service import BlackListService

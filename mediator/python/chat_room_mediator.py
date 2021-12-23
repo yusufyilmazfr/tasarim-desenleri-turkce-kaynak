@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 21.12.2021
 from abstract_chat_room_mediator import AbstractChatRoomMediator
 from chat_user import ChatUser
 

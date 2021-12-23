@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from shopping_cart import ShoppingCart
 from paypal_payment import PaypalPayment
 from credit_cart_payment import CreditCartPayment

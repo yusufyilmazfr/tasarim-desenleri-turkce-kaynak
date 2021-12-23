@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from vending_machine_state import VendingMachineState
 from delivery_state import DeliveryState
 

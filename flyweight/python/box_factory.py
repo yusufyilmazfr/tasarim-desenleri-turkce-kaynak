@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 17.12.2021
 from box_color import BoxColor
 from black_box import BlackBox
 from blue_box import BlueBox
@@ -11,6 +10,7 @@ class BoxFactory:
     Oluşturulmuş ise de havuzdan seçilip verilecektir.
     UML diyagramındaki FlyweightFactory sınıfına denk gelmektedir.
     """
+
     def __init__(self):
         self._boxes = {}
 

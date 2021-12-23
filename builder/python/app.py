@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
 from new_student_lesson_builder import NewStudentLessonBuilder
 from old_student_lesson_builder import OldStudentLessonBuilder
 from lesson_director import LessonDirector

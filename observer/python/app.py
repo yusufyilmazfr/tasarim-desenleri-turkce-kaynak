@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from observer_user import ObserverUser
 from samsung import Samsung
 

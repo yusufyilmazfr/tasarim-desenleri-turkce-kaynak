@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 17.12.2021
 from abc import ABC, ABCMeta
 from data_source import DataSource
 
@@ -18,5 +17,6 @@ class BaseDataSourceDecorator(DataSource, metaclass=ABCMeta):
     Değiştirilmesini istediğimiz metotları abstract anahtar kelimesi ile işaretledik.
     UML diyagramındaki BaseDecorator yapısına denk gelmektedir.
     """
+
     def __init__(self, data_source: DataSource):
         self.data_source = data_source

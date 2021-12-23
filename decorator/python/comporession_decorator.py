@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 17.12.2021
 from base_data_source_decorator import BaseDataSourceDecorator
 
 

@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 21.12.2021
 from employee_aggregate import EmployeeAggregate
 from employee_iterator import EmployeeIterator
 from employee import Employee

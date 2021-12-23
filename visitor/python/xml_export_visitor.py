@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from book_export_visitor import BookExportVisitor
 from magazine import Magazine
 from encyclopedia import Encyclopedia

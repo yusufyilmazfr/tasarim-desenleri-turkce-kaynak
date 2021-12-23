@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from stock_manager import StockManager
 from buy_stock import BuyStock
 from sell_stock import SellStock

@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
 from json_serializer import JsonSerializer
 from custom_serializer import CustomSerializer
 
@@ -12,6 +11,7 @@ class CustomSerializerAdapter(JsonSerializer):
     sağlaır.
     UML diyagramındaki Adapter'a denk gelmektedir.
     """
+
     def serialize_object(self, obj):
         custom_serializer = CustomSerializer()
         return custom_serializer.serialize(obj)

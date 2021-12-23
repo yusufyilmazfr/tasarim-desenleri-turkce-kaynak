@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from encyclopedia import Encyclopedia
 from magazine import Magazine
 from xml_export_visitor import XmlExportVisitor

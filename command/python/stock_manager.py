@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 class StockManager:
     """
     Komutları nesneler haline getirelecek olan sınıf.

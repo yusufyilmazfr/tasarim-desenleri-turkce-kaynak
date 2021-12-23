@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from developer_expression import DeveloperExpression
 from team_lead_expression import TeamLeadExpression
 from accounting_expression import AccountingExpression

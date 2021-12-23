@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
 class Lesson:
     """
     UML diyagramındaki Product sınıfına denk gelmektedir.

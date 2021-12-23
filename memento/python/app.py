@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from text_originator import TextOriginator
 
 if __name__ == '__main__':

@@ -11,4 +11,3 @@ class _Singleton(type):
 
 class Database(metaclass=_Singleton):
     pass
-

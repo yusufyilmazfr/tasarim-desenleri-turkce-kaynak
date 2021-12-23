@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from image import Image
 from jpg_handler import JPGHandler
 from jpeg_handler import JPEGHandler

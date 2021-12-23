@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 16.12.2021
 from database_factory import DatabaseFactory
 from connection import Connection
 from command import Command

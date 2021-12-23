@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 20.12.2021
 from person import Person
 from authenticatable_mask_order_proxy import AuthenticatableMaskOrderProxy
 

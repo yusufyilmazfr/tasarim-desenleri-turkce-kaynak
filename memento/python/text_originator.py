@@ -1,4 +1,3 @@
-# Created by Sezer BOZKIR<admin@sezerbozkir.com> at 22.12.2021
 from text_undo_care_taker import TextUndoCareTaker
 from text_memento import TextMemento
 
