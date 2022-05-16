@@ -21,6 +21,7 @@ export class ProductCatalog implements ICatalogComponent {
   }
 
   public drawHierarchy(): void {
+    console.log(this.name)
     for (let component of this.components) {
       component.drawHierarchy();
     }

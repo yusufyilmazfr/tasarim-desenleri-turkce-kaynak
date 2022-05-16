@@ -4,7 +4,7 @@ import {Product} from "./product";
 function main() {
   const items = new ProductCatalog('Ürünler');
   const phones = new ProductCatalog('Telefonlar');
-  const iPhone = new ProductCatalog('İPhone Teelfonlar');
+  const iPhone = new ProductCatalog('iPhone Telefonlar');
   const samsung = new ProductCatalog('Samsung Telefonlar');
 
   const iphone5Item = new Product('iPhone 5 Telefon');
