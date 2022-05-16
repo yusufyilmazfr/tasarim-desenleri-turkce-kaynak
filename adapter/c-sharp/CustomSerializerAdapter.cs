@@ -8,7 +8,7 @@ namespace Adapter
     // Sistemin kullandığı arayüzü uygular.
     // Bu sayede IJsonSerializer'i uygulayan bir sınıf örneği istendiğinde
     // bu sınıf örneğini vererek mevcut koda dokunmadan sistemin devam etmesi
-    // sağlaır.
+    // sağlanır.
     // UML diyagramındaki Adapter'a denk gelmektedir.
     class CustomSerializerAdapter : IJsonSerializer
     {

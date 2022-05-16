@@ -7,7 +7,7 @@ class CreditCardFacade {
 
         val blackListService = BlackListService()
 
-        if (blackListService.checkEmployeeIsTheBlackList(customer)) {
+        if (!blackListService.checkEmployeeIsTheBlackList(customer)) {
             creditCardManager.createCreditCart(customer)
         }
     }

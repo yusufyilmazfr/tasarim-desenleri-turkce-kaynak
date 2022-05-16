@@ -17,3 +17,4 @@ if __name__ == '__main__':
 
     lesson: Lesson = lesson_builder.get_result()
     print(f"Old Student: {lesson.name} - {lesson.price} - {lesson.discounted_price}")
+    # output: Artificial Intelligence - Beginner to Advanced in 10 Minute. - 49,99 - 24,995
