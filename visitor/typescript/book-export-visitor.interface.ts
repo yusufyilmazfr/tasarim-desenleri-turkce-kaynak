@@ -1,8 +1,10 @@
-import {Book} from "./book";
+import {Encyclopedia} from "./encyclopedia";
+import {Magazine} from "./magazine";
 
 // Her ConcreteVisitor örneği için metot temsil eder.
 // Parametre olarak Element sınıfından türeyen sınıfların örneğini alır.
 // UML diyagramındaki Visitor yapısına denk gelir.
 export interface IBookExportVisitor {
-  exportVisit(magazine: Book): void;
+  exportVisit(encyclopedia: Encyclopedia): void;
+  exportVisit(magazine: Magazine): void;
 }
