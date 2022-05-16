@@ -10,4 +10,5 @@ function main() {
   const lesson = lessonBuilder.getResult();
 
   console.log(`${lesson.name} - ${lesson.price} - ${lesson.discountedPrice}`);
+  // output: Artificial Intelligence - Beginner to Advanced in 10 Minute. - 49,99 - 24,995
 }
