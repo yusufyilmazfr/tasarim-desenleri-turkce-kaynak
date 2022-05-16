@@ -5,7 +5,7 @@ import {CustomSerializer} from "./custom-serializer";
 // Sistemin kullandığı arayüzü uygular.
 // Bu sayede IJsonSerializer'i uygulayan bir sınıf örneği istendiğinde
 // bu sınıf örneğini vererek mevcut koda dokunmadan sistemin devam etmesi
-// sağlaır.
+// sağlanır.
 // UML diyagramındaki Adapter'a denk gelmektedir.
 export class CustomSerializerAdapter implements  IJsonSerializer {
   serializeObject(obj: object): string {
