@@ -7,7 +7,7 @@ export class CreditCardFacade {
     const creditCardManager = new CreditCardManager();
     const blackListService = new BlackListService();
 
-    if(blackListService.checkEmployeeIsTheBlackList(customer)) {
+    if(!blackListService.checkEmployeeIsTheBlackList(customer)) {
       creditCardManager.createCreditCart(customer);
     }
   }

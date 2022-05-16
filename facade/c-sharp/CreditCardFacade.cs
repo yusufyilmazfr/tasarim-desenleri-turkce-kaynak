@@ -11,7 +11,7 @@ namespace Facade
             CreditCardManager creditCardManager = new CreditCardManager(); ;
             BlackListService blackListService = new BlackListService();
 
-            if (blackListService.CheckEmployeeIsTheBlackList(customer))
+            if (!blackListService.CheckEmployeeIsTheBlackList(customer))
             {
                 creditCardManager.CreateCreditCart(customer);
             }

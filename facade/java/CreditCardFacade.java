@@ -7,7 +7,7 @@ public class CreditCardFacade {
 
         BlackListService blackListService = new BlackListService();
 
-        if (blackListService.checkEmployeeIsTheBlackList(customer)) {
+        if (!blackListService.checkEmployeeIsTheBlackList(customer)) {
             creditCardManager.createCreditCart(customer);
         }
     }
