@@ -5,5 +5,5 @@ import {IMessageSender} from "./message-sender.interface";
 export abstract class Message {
   protected constructor(protected readonly messageSender: IMessageSender) {}
 
-  public abstract send(): Promise<void>;
+  public abstract send(): void;
 }

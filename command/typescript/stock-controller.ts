@@ -10,9 +10,9 @@ export class StockController {
     this.orderCommands.push(command);
   }
 
-  public async placeOrders() {
+  public placeOrders() {
     for (let command of this.orderCommands) {
-      await command.execute();
+      command.execute();
     }
 
     this.orderCommands = [];

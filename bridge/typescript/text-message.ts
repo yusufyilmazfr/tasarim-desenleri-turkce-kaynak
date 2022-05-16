@@ -8,7 +8,7 @@ export class TextMessage extends Message {
     super(messageSender);
   }
 
-  async send(): Promise<void> {
-   await this.messageSender.sendMessage(this);
+  public send(): void {
+   this.messageSender.sendMessage(this);
   }
 }

@@ -3,7 +3,7 @@ import {BuyStock} from "./buy-stock";
 import {SellStock} from "./sell-stock";
 import {StockController} from "./stock-controller";
 
-async function main() {
+function main() {
   const stockManager = new StockManager('iPhone', 200);
 
   const buyStock = new BuyStock(stockManager);
@@ -15,7 +15,7 @@ async function main() {
   stockController.takeOrder(sellStock);
   stockController.takeOrder(sellStock);
 
-  await stockController.placeOrders();
+  stockController.placeOrders();
   // output:
   //  Stock: iPhone, 200 bought!
   //  Stock: iPhone, 200 sold!

@@ -1,15 +1,15 @@
 import {Connection} from "./connection";
 
 export class MysqlConnection extends Connection {
-  async closeConnection(): Promise<boolean> {
+  public closeConnection(): boolean {
     // MySQL veri tabanı bağlantısının açılması için
     // Gerekli operasyonel işlemler...
-    return Promise.resolve(true);
+    return true;
   }
 
-  async openConnection(): Promise<boolean> {
+  public openConnection(): boolean {
     // MySQL veri tabanı bağlantısının kapatılması için
     // Gerekli operasyonel işlemler...
-    return Promise.resolve(true);
+    return true;
   }
 }

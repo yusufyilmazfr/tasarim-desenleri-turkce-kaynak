@@ -7,7 +7,7 @@ import {StockManager} from "./stock-manager";
 export class BuyStock implements IOrderCommand{
   constructor(private readonly stockManager: StockManager) {}
 
-  public async execute(): Promise<void> {
-    await this.stockManager.buy();
+  public execute(): void {
+    this.stockManager.buy();
   }
 }

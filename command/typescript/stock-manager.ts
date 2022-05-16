@@ -9,11 +9,11 @@ export class StockManager {
     this.quantity = quantity;
   }
 
-  public async buy(): Promise<void> {
+  public buy(): void {
     console.log(`Stock: ${this.name}, ${this.quantity} bought!`);
   }
 
-  public async sell(): Promise<void> {
+  public sell(): void {
     console.log(`Stock: ${this.name}, ${this.quantity} sold!`);
   }
 }

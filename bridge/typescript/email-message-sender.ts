@@ -4,7 +4,7 @@ import {Message} from "./message";
 // UML diyagramındaki ConcreteImplementor (EmailMessageSender) kısmına denk gelmektedir.
 // Implementor arayüzünü (IMessageSender) uygular.
 export class EmailMessageSender implements IMessageSender {
-  public async sendMessage(message: Message): Promise<void> {
+  public sendMessage(message: Message): void {
     console.log('EmailMessageSender: Sending email message...');
   }
 }
