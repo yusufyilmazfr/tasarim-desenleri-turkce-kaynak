@@ -6,7 +6,7 @@
 
 ---
 
-### İçindekiler
+### İçindekiler 📄
 
 1. [Giriş ve Tanışma](#giriş-ve-tanışma)
 2. [Nesne Yönelimli Programlama Nedir?](#nesne-yönelimli-programlama-nedir)
@@ -66,7 +66,7 @@ Merhabalar.👋
 
 Ben Yusuf, K.T.Ü yazılım mühendisliği öğrencisiyim. Oluşturduğum bu kaynak ile; tasarım desenlerini bilmeyen kişiler için öğrenmeyi, bilgisi olan kişiler için de bilgilerini güncel tutacağı ve bir problem olduğunda danışacağı bir başucu kaynağı olmasını hedefliyorum. Bu kaynağın ortaya çıkış amacından da kısaca bahsedecek olursam; çevremdeki insanların, takip ettiğim kişilerin Türkçe kaynak oluşturma konusunda bir çaba içerisinde olduğunu fark ettim. Kimileri blog, haftalık okumalar, bültenler ya da kitap yazarak kimileri de eğitim videoları çekerek. Ben de bu zincire katılarak elimden geldiğince faydalı olmaya çalışmak istedim ve bu kaynağı oluşturmaya karar verdim.
 
-## Nesne Yönelimli Programlama Nedir?
+## Nesne Yönelimli Programlama Nedir ⁉️
 
 Nesne yönelimli programlama paradigması, gerçek hayatta olan varlıkları yazılım dünyasında modellemekte kullandığımız, her işlevin nesneler olarak soyutlandığı bir programlama yaklaşımıdır. Tıpkı gerçek hayatta olduğu gibi yazılımda da bu sayede nesnelerimizin öznitelikleri, davranışları olacaktır.
 
@@ -210,7 +210,7 @@ Bunları yapmamızı sağlayan prensipleri 5 madde içerisinde inceleyeceğiz.
 
 ![single-res-person](./images/single-res-person.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 public class Person {
@@ -228,7 +228,7 @@ Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yap�
 
 ![single-res-person-2](./images/single-res-person-2.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 class Person {
@@ -250,7 +250,7 @@ Yazılımlar için zamanla değişim şüphesiz kaçınılmazdır; değişen iş
 
 ![open-closed](./images/open-closed.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 class Employee {
@@ -278,7 +278,7 @@ Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yap�
 
 ![open-closed-2](./images/open-closed-2.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 class Employee { 
@@ -311,7 +311,7 @@ Alt sınıflar, üst sınıflardan türediği için onların davranışlarını 
 
 ![ ](./images/liskov-1.png)
 
-Java Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 abstract class Logger {
@@ -420,7 +420,7 @@ Arayüzlerimizde genel olarak birçok operasyonel işlem barındırabiliriz faka
 
 ![interface-segre](./images/interface-segre.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 interface IWorker {
@@ -458,7 +458,7 @@ Yukarıdaki UML diyagramını biraz daha düzenlersek aşağıdaki gibi bir yap�
 
 ![interface-segre-2](./images/interface-segre-2.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 interface IWorker {
@@ -516,7 +516,7 @@ class RobotWorker implements IWorker {
 
 ![dependency-inv](./images/dependency-inv.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 class ExceptionReporter {
@@ -609,7 +609,7 @@ Desene ait yukarıdaki diyagrama bakacak olursak, örneğini istediğimiz sını
 2. `Static bir değişken` olmalıdır, referansı tutmak için.
 3. Tutulan referansa erişmek için bir metot olmalıdır, `getInstance()`
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 class Database
@@ -642,7 +642,7 @@ firstInstanceRequest == secondInstanceRequest // true
 
 Desenin yukarıdaki durumu geçerli gibi duruyor fakat multi-thread uygulamalarda nesnenin daha örneğinin oluşmadığı esnada `if (database == null)` durumuna aynı anda birden fazla thread girebilir, bu sayede de o sınıfa ait birden fazla nesne örneği bulunur. Bu kısmı iyileştirme yolunda dillerin bize sağladığı yapıları kullanabiliriz. C# dilinde `lock` ile JAVA dili için de `synchronized` sayesinde aynı anda sadece bir yapının erişmesini sağlarız. 
 
-C# dili için `GetInstance()` metotunu düzenleyecek olursak aşağıdaki hali alacaktır.
+`C#` dili için `GetInstance()` metotunu düzenleyecek olursak aşağıdaki hali alacaktır.
 
 ```csharp
 public class Database
@@ -683,7 +683,7 @@ Buradaki amaç istemci tarafından birbirleri ile ilişkili nesnelerin oluşturu
 
 ![factory-pattern](./images/factory-pattern.png)
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 public class User
@@ -781,7 +781,7 @@ Anlayacağımız; birden fazla ürün ailesi ile çalışmak zorunda kaldığım
 
 Şöyle bir senaryo düşünülebilir; sistemimiz isteğe bağlı Oracle ya da MySQL için sorgu çalıştırabilir olsun. Bu işlemler için temel olarak da bağlantının açılması, kapatılması ve sorgunun çalıştırılması gerekli olduğu varsayalım.  Bu işlemler direkt olarak herbiri Factory desen olarak ayarlanabilir ama birbirleri ile ilişkili aileden geldikleri için bu desene daha sağlıklı olacaktır. 
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Soyut sınıfımızdır.
@@ -964,7 +964,7 @@ etkilemeyecektir.
 
 Senaryo olarak da online bir eğitim platformunun ilk defa eğitim alacak olan öğrencilere ilk eğitimini yarı fiyatına verdiği düşünülsün.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // UML diyagramındaki Product sınıfına denk gelmektedir.
@@ -1113,7 +1113,7 @@ Prototip deseninin tasarlanmasının asıl sebebi, ilgili nesne üzerinden aynı
 
 ![prototype-uml](./images/prototype-uml.png)
 
-JAVA Kod Örneği:
+`Java` Kod Örneği:
 
 ```java
 // Klonlamak istediğimiz sınıflarımıza uygulayacağımız arayüz.
@@ -1157,7 +1157,7 @@ System.out.println(gulizar == cloneGulizar); //output: false
 
 ---
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Klonlamak istediğimiz sınıflarımıza uygulayacağımız arayüz.
@@ -1231,7 +1231,7 @@ Farklı sistemleri kendi sistemimize dahil ederken bazen yapılar uyuşmayabiliy
 
 Geliştirdiğimiz uygulamada JSON işlemleri için sistemimizin `IJsonSerializer` arayüzünü kullandığını düşünelim. İlerleyen süreçte bu işlemleri gerçekleştirmek için 3. parti bir yazılım kullanmak istediniz  fakat daha sonradan eklediğiniz yapı sisteminiz ile uyumsuz çünkü sistem `IJsonSerializer` arayüzünü uyguluyor fakat yeni gelen yapı bunu uygulamamaktadır ve yeni gelen yapıya da müdahalede bulunamıyorsunuz. Bu sorunu adapter ile aşağıdaki gibi çözüme götürebiliriz.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // UML diyagramındaki Target'a denk gelmektedir.
@@ -1336,7 +1336,7 @@ Yukarıdaki desene bakarak özetleyecek olursak:
 
 Verilen diyagrama ait kod örneği aşağıdaki gibi olacaktır.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // UML diyagramındaki Abstraction kısmına denk gelmektedir.
@@ -1452,7 +1452,7 @@ Aşağıda bu desene ait UML diyagramı yer almaktadır.
 
 Senaryo olarak iç içe geçmiş kategorileri ve kategorilerin en altında bulunan ürünleri düşünebiliriz. 
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Soyut yapımızdır.
@@ -1594,7 +1594,7 @@ gibi bir çok dezavantaj ortaya çıkmaktadır bu tür olaylarda. Bu tür duruml
 
 - **ConcreteDecorator:** Yeni davranışların tanımlandığı sınıftır, `BaseDecorator` sınıfından türer.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Üst sınıfların uygulayacağı arayüzdür.
@@ -1717,7 +1717,7 @@ Bu desendeki amaç karmaşık iş süreçlerini saklamaktır. Bunların yanı s�
 
 Senaryo olarak bir bankanın müşterilerine kredi kartı verdiklerini, bu kredi kartı verme işlemlerinden önce ise kendi iş kurallarını uyguladığını kabul edelim. Kodun kalabalık olmaması için temel olarak müşteriye kredi kartı vermeden önce kara listede olup olmadığı kontrol ediliyor olsun.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Banka müşterimizi temsili oluşturan sınıf
@@ -1787,7 +1787,7 @@ Bu karmaşıklığın önüne geçmek için `Facade` tasarım deseni uygun bir �
 
 Yukarıdaki UML diyagramından esinlenerek kredi kartı işlemlerindeki karmaşıklığı `CreditCardFacade` adında oluşturduğumuz sınıf içerisinde gizleyebiliriz. Kodumuz aşağıdaki gibi olacaktır.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Banka müşterimizi temsili oluşturan sınıf.
@@ -1877,7 +1877,7 @@ Yukarıdaki UML diyagramına bakıldığı zaman **intrinsic** gibi kavramlar g�
 
 Senaryo olarak oyunda bir sahne tasarlandığını ve sahne arka planında bulunan kutuların rastgele yerleştirdiğini varsayalım. Burada kutuların değişen tek şeyi renk ve konumları olacaktır.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Kutuların rengini tutmaktadır.
@@ -2016,7 +2016,7 @@ Uygulama boyunca belirli bir işlemlerimizi yerine getiren sınıflarımız mevc
 
 Senaryo olarak COVID-19 virüsünden dolayı maske siparişi verildiğini ve maske siparişi verilmeden önce vatandaşa ait T.C kimlik numarası ve adres doğrulamasının yapıldığı düşünülsün.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Sipariş işlemlerini gerçekleştiren sınıflar tarafından uygulanan arayüz.
@@ -2125,7 +2125,7 @@ orderableMask.CreateOrder(semanur);
 
 Geliştirdiğimiz uygulamada gelen görselleri PNG formatına çevirdiğimiz var sayılsın.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Uygulama süresince resimlerimizi temsil edecek sınıf.
@@ -2163,7 +2163,7 @@ Yukarıdaki koda bakıldığı zaman if-else içerisinde bir yığın görünmek
 
 ![chain-of-responsibility](./images/chain-of-responsibility.png)
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Uygulama süresince resimlerimizi temsil edecek sınıf.
@@ -2300,7 +2300,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 Senaryo olarak bir ürüne ait stok takibi verilen basit bir sistem olduğunu var sayalım. Burada stok ile ilgili işlemler bu tasarım desenine göre yapılsın. 
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Komutları nesneler haline getirelecek olan sınıf.
@@ -2454,7 +2454,7 @@ Senaryo olarak bir projeye başlayacağımızı ve proje ekibinin verilerinin bi
 
 varsayalım. Örnek senaryo olarak **GGML** olarak gelen bir dizginin; 2 geliştirici, 1 muhasebeci, 1 takım lideri olarak toplamda 18000 maliyet oluşturduğu anlaşılmaktadır. Bu işlemleri yapan kodu Interpreter tasarım deseni kullanarak gerçekleştirelim.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Yorumlanacak olan içeriktir.
@@ -2597,7 +2597,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 Senaryo olarak elimizde bir çalışan listesi olduğu ve bu liste üzerinde işlemler yapıldığı varsayılsın.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Liste üzerinde gezilecek olan elamnı temsil eden sınıf.
@@ -2751,7 +2751,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 Senaryo olarak online bir sohbet odası olduğu ve bu odada kullanıcıların 1-1 görüşme yaptıkları kabul edilsin. Desen gereği kullanıcılar direkt birbirleri ile iletişim kuramayacakları için işlemler `Mediator `üzerinden gerçekleştirilecektir.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Haberleşme için ortak bir arayüz sağlar.
@@ -2887,7 +2887,7 @@ Bu desene ait UML diyagramı aşağıdaki gibidir.
 
 Senaryo olarak bir metin editörü geliştirdiğimizi ve bu metin editöründe önceki yazdıklarımıza ve o anki cursor pozisyonuna geri dönebildiğimizi düşünelim.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Saklamak istediğimiz değerlerin tanımlandığı yerdir.
@@ -3033,7 +3033,7 @@ Aşağıda bu tasarım desenine ait UML diyagramı bulunmaktadır.
 
 Senaryo olarak kullanıcılarımızın olduğunu ve bu kullanıcıların fiyatını takip ettiği bir ürün olduğunu farz edelim. Ürün fiyatı değiştikten sonra takip eden kullanıcılara bir mesaj gittiğini düşünelim.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Değişimden etkilenecek, izleyecek olan sınıfların uyguladığı arayüzdür.
@@ -3183,7 +3183,7 @@ Senaryol olarak yiyecek otomatları düşünülebilir. Bu otomatlar için sıral
 
 4. Ürünün teslim edilmesi durumu => **DeliveryState**
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Davranışların tanımlandığı soyut sınıftır.
@@ -3313,7 +3313,7 @@ Bir işlemin birden fazla yapılması, çalışma zamanında algoritma değişik
 
 Senaryo olarak e-ticaret projesinin ödeme kısmını düşünelim. Ödeme metotları arasında; kredi kartı, Paypal gibi seçenekler mevcuttur. 
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // UML diyagramındaki Strategy arayüzüne denk gelmektedir.
@@ -3466,7 +3466,7 @@ Aşağıda bu tasarım desenine ait UML diyagramı bulunmaktadır.
 
 Senaryo olarak geçen haftanın verilerinin analizinin yapılıp en sonda da bizlere bir çıktı, rapor verilğini düşünelim. Burada rapor verme süreçleri farklılık gösterebilir. Örneğin; XML formatında da bir rapor hazırlanabilir ya da HTML formatında da.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Metot iskeletimizi ve soyutlanmış metotları içermektedir.
@@ -3569,7 +3569,7 @@ Bu tasarım desenine ait UML diyagramı aşağıdaki gibidir.
 
 Senaryo olarak elimizde kitaplarımızın olduğunu ve bu kitap bilgilerinin farklı şekillerde XML ya da JSON gibi çıktılarının alındığını düşünelim.
 
-C# Kod Örneği:
+`C#` Kod Örneği:
 
 ```csharp
 // Temel sınıftır.
