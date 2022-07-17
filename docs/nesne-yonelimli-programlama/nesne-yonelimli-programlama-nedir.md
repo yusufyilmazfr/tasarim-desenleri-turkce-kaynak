@@ -1,4 +1,4 @@
-# Nesne Yönelimli Programlama Nedir?
+# Nesne Yönelimli Programlama Nedir ?
 
 Nesne yönelimli programlama paradigması, gerçek hayatta olan varlıkları yazılım dünyasında modellemekte kullandığımız, her işlevin nesneler olarak soyutlandığı bir programlama yaklaşımıdır. Tıpkı gerçek hayatta olduğu gibi yazılımda da bu sayede nesnelerimizin öznitelikleri, davranışları olacaktır.
 
