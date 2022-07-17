@@ -5,30 +5,11 @@
 ## Nesne Yönelimli Programlama
 
 * [Nesne Yönelimli Programlama Nedir ?](./nesne-yonelimli-programlama/nesne-yonelimli-programlama-nedir.md)
-* [Nesneler ve Sınıflar](./nesne-yonelimli-programlama/nesneler-ve-siniflar.md)        
-* [Sınıf Hiyerarşileri](./nesne-yonelimli-programlama/sinif-hiyerasileri.md)    
-* [Nesne Yönelimli Programlama İlkeleri](/nesne-yonelimli-programlama/nesne-yonelimli-programlama-ilkeleri/nesne-yonelimli-programlama-ilkeleri.md)
-    * [Abstraction (Soyutlama)](/nesne-yonelimli-programlama/nesne-yonelimli-programlama-ilkeleri/abstraction.md)
-    * [Encapsulation (Kapsülleme)](/nesne-yonelimli-programlama/nesne-yonelimli-programlama-ilkeleri/encapsulation.md)
-    * [Inheritance (Kalıtım)](/nesne-yonelimli-programlama/nesne-yonelimli-programlama-ilkeleri/inheritance.md)
-    * [Polymorphism (Çok Biçimlilik)](/nesne-yonelimli-programlama/nesne-yonelimli-programlama-ilkeleri/polymorphism.md)
-* [Nesneler Arası İlişkiler](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/nesneler-arasi-iliskiler.md)
-    * [Inheritance (Kalıtım)](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/kalitim.md)
-    * [Implementation](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/implementation.md)
-    * [Association (Bağlantı)](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/association.md)
-    * [Dependency (Bağımlılık)](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/dependency.md)
-    * [Composition(Bileşim)](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/composition.md)
-    * [Aggregation(İçerme)](/nesne-yonelimli-programlama/nesneler-arasi-iliskiler/aggregation.md)
 
 ## S.O.L.I.D
 
 * [S.O.L.I.D Nedir?](./solid/solid-nedir.md)
-    * [Single Responsibility (Tek Sorumluluk Prensibi)](./solid/single-responsibility-principle.md)
-    * [Open/Closed Principle (Açık Kapalı Prensibi)](./solid/open-closed-principle.md)
-    * [Liskov Substitution (Liskov’un Yerine geçme Prensibi)](./solid/liskov-substitution-principle.md)
-    * [Interface Segregation (Arayüz Ayrımı Prensibi)](./solid/interface-segregation-principle.md)
-    * [Dependency Inversion (Bağımlılıkların Tersine Çevrilmesi Prensibi)](./solid/dependency-inversion-principle.md)
-    * 
+
 ## Tasarım Desenleri
 
 * [Tasarım Deseni Nedir ?](./tasarim-desenleri/tasarim-deseni-nedir.md)
