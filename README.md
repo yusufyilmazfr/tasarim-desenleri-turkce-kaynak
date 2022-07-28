@@ -2,7 +2,7 @@
 
 ---
 
-*Başlamadan önce: kaynağa destek olabilir ve daha çok kişiye erişmesini sağlayabilirsiniz.* 🎉⭐
+*Başlamadan önce: kaynağa destek ve [![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/yusufyilmazfr) olabilir ve daha çok kişiye erişmesini sağlayabilirsiniz.* 💖
 
 ---
 
