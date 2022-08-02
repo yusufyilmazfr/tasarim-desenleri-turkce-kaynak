@@ -6,6 +6,12 @@
 
 ---
 
+---
+
+Tasarım Desenleri Türkçe Kaynak artık online! Online okumak için [GitBook](https://yusufyilmazfr.gitbook.io/tasarim-desenleri-turkce-kaynak)'a göz atabilirsiniz. 🥰
+
+---
+
 ### İçindekiler 📄
 
 1. [Giriş ve Tanışma](#giriş-ve-tanışma)
