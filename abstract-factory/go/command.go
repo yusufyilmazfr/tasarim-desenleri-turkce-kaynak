@@ -1,5 +1,5 @@
 package main
 
-type command interface {
+type Command interface {
 	executeCommand(query string)
 }

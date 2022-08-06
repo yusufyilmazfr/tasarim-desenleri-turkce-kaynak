@@ -3,10 +3,10 @@ package main
 // Builder arayüzünü kullanarak nesne örneklemesi yapar.
 // UML diyagramındaki Director'a denk gelmektedir.
 type lessonDirector struct {
-	lessonBuilder lessonBuilder
+	lessonBuilder LessonBuilder
 }
 
-func NewLessonDirector(lessonBuilder lessonBuilder) *lessonDirector {
+func NewLessonDirector(lessonBuilder LessonBuilder) *lessonDirector {
 	return &lessonDirector{lessonBuilder: lessonBuilder}
 }
 

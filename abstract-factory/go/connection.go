@@ -1,6 +1,6 @@
 package main
 
-type connection interface {
+type Connection interface {
 	openConnection() error
 	closeConnection() error
 }

@@ -9,6 +9,6 @@ func NewEmployee(firstName string, lastName string) *employee {
 	return &employee{firstName, lastName}
 }
 
-func (e *employee) clone() cloneablePrototype {
+func (e *employee) clone() CloneablePrototype {
 	return &employee{e.firstName, e.lastName}
 }

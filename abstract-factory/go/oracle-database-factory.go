@@ -7,10 +7,10 @@ func NewOracleDatabaseFactory() *oracleDatabaseFactory {
 	return &oracleDatabaseFactory{}
 }
 
-func (f *oracleDatabaseFactory) createConnection() connection {
+func (f *oracleDatabaseFactory) createConnection() Connection {
 	return newOracleConnection()
 }
 
-func (f *oracleDatabaseFactory) createCommand() command {
+func (f *oracleDatabaseFactory) createCommand() Command {
 	return newOracleCommand()
 }
