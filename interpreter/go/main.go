@@ -11,6 +11,6 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Printf("%s :> %d", ctx.Formula, ctx.TotalPoint)
+	fmt.Printf("%s :> %d\n", ctx.Formula, ctx.TotalPoint)
 	// output: GGML :> 18000
 }

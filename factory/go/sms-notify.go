@@ -10,5 +10,5 @@ func newSMSNotify() *SMSNotify {
 }
 
 func (s *SMSNotify) sendNotification(user User) {
-	fmt.Printf("Sending sms notification to %s\n", user)
+	fmt.Printf("Sending sms notification to %s\n", user.name)
 }
