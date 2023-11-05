@@ -29,12 +29,12 @@ namespace Composite
             _components.Remove(catalogComponent);
         }
 
-        public void DrawHierarchy()
+        public void DrawHierarchy(string prefix)
         {
-            Console.WriteLine(_name);
+            Console.WriteLine(prefix + _name);
             foreach (ICatalogComponent component in _components)
             {
-                component.DrawHierarchy();
+                component.DrawHierarchy(prefix + "-");
             }
         }
     }

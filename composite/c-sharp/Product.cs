@@ -16,9 +16,9 @@ namespace Composite
             _name = name;
         }
 
-        public void DrawHierarchy()
+        public void DrawHierarchy(string prefix)
         {
-            Console.WriteLine(_name);
+            Console.WriteLine(prefix + _name);
         }
     }
 }

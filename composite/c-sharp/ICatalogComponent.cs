@@ -10,6 +10,6 @@ namespace Composite
     // Diğer sınıfların uygulayacağı hiyerarşiyi çizme metotunu içermektedir.
     public interface ICatalogComponent
     {
-        void DrawHierarchy();
+        void DrawHierarchy(string prefix);
     }
 }
