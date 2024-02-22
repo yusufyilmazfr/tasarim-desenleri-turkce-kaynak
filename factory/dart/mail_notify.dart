@@ -5,7 +5,5 @@ final class MailNotify implements INotify {
   const MailNotify();
 
   @override
-  void sendNotification(User user) {
-    // Mail gönderme operasyonu.
-  }
+  void sendNotification(User user) {}
 }

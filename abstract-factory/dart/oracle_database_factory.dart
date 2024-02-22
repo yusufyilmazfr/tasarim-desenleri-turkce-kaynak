@@ -4,17 +4,16 @@ import 'i_database_factory.dart';
 import 'oracle_command.dart';
 import 'oracle_connection.dart';
 
-// Oracle için ilişkili nesneler üretildi.
 final class OracleDatabaseFactory implements IDatabaseFactory {
   const OracleDatabaseFactory();
 
   @override
   Command createCommand() {
-    return OracleCommand();
+    return const OracleCommand();
   }
 
   @override
   Connection createConnection() {
-    return OracleConnection();
+    return const OracleConnection();
   }
 }

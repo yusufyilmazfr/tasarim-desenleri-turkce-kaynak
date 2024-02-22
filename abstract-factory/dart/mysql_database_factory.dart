@@ -4,17 +4,16 @@ import 'i_database_factory.dart';
 import 'mysql_command.dart';
 import 'mysql_connection.dart';
 
-// MySQL için ilişkili nesneler üretildi.
 final class MysqlDatabaseFactory implements IDatabaseFactory {
   const MysqlDatabaseFactory();
 
   @override
   Command createCommand() {
-    return MysqlCommand();
+    return const MysqlCommand();
   }
 
   @override
   Connection createConnection() {
-    return MysqlConnection();
+    return const MysqlConnection();
   }
 }

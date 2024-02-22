@@ -5,8 +5,6 @@ final class MysqlCommand implements Command {
 
   @override
   void executeCommand(String query) {
-    // Gelen sorgunun çalıştırılması için
-    // Gerekli operasyonel işlemler...
     print('MysqlCommand: $query');
   }
 }

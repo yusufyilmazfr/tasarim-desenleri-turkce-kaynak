@@ -15,7 +15,7 @@ final class CustomOperation {
 
   void removeById(int id) {
     _connection.openConnection();
-    _command.executeCommand("DELETE ...");
+    _command.executeCommand('DELETE ...');
     _connection.closeConnection();
   }
 }

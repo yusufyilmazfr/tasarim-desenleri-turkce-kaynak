@@ -9,12 +9,12 @@ abstract class INotify {
   //? Ayrıca bakınız: https://dart.dev/language/constructors#factory-constructors
   factory INotify.createNotify(String type) {
     switch (type) {
-      case "MAIL":
-        return MailNotify();
-      case "SMS":
-        return SmsNotify();
+      case 'MAIL':
+        return const MailNotify();
+      case 'SMS':
+        return const SmsNotify();
       default:
-        throw "Geçersiz bildirim türü.";
+        throw Exception('Geçersiz bildirim türü.');
     }
   }
 }

@@ -7,9 +7,9 @@ final class OldStudentLessonBuilder implements LessonBuilder {
 
   @override
   void getLesson() {
-    lesson = new Lesson();
+    lesson = Lesson();
     lesson.id = 1;
-    lesson.name = "Artificial Intelligence -  Beginner to Advanced in 10 Minute.";
+    lesson.name = 'Artificial Intelligence -  Beginner to Advanced in 10 Minute.';
     lesson.price = 49.99;
   }
 
@@ -21,7 +21,7 @@ final class OldStudentLessonBuilder implements LessonBuilder {
 
   @override
   void addLessonNote() {
-    lesson.lessonNote = "";
+    lesson.lessonNote = '';
   }
 
   @override

@@ -3,12 +3,12 @@ import 'notify_factory.dart';
 import 'user.dart';
 
 void main() {
-  final NotifyFactory notifyFactory = NotifyFactory();
+  const NotifyFactory notifyFactory = NotifyFactory();
 
-  final INotify? notify = notifyFactory.createNotify("MAIL");
-  notify?.sendNotification(User());
+  final INotify? notify = notifyFactory.createNotify('MAIL');
+  notify?.sendNotification(const User());
 
   // Alternatif
-  final INotify notify2 = INotify.createNotify("SMS");
-  notify2.sendNotification(User());
+  final INotify notify2 = INotify.createNotify('SMS');
+  notify2.sendNotification(const User());
 }

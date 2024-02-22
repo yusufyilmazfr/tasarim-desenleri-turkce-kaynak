@@ -9,7 +9,7 @@ final class NewStudentLessonBuilder implements LessonBuilder {
   void getLesson() {
     lesson = Lesson();
     lesson.id = 1;
-    lesson.name = "Artificial Intelligence -  Beginner to Advanced in 10 Minute.";
+    lesson.name = 'Artificial Intelligence -  Beginner to Advanced in 10 Minute.';
     lesson.price = 49.99;
   }
 
@@ -21,7 +21,7 @@ final class NewStudentLessonBuilder implements LessonBuilder {
 
   @override
   void addLessonNote() {
-    lesson.lessonNote = "Hey, welcome. Your discount code has been applied!";
+    lesson.lessonNote = 'Hey, welcome. Your discount code has been applied!';
   }
 
   @override

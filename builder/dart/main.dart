@@ -11,6 +11,5 @@ void main() {
 
   final Lesson lesson = lessonBuilder.getResult();
 
-  print("${lesson.name} - ${lesson.price} - ${lesson.discountedPrice}");
-  // output: Artificial Intelligence -  Beginner to Advanced in 10 Minute. - 49.99 - 24.995
+  print('${lesson.name} - ${lesson.price} - ${lesson.discountedPrice}');
 }
