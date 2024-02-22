@@ -1,3 +1,7 @@
+> # 🇵🇸 ÖZGÜR FİLİSTİN!
+> İsrail onbinlerce Filistinli sivili öldürüyor ve milyonlarcasını da yerinden ediyor. **Bu bir soykırımdır**. Lütfen onların özgürlüğünü ve Filistin'in var olma hakkını savunmaya yardımcı olun.
+---
+
 ![tasarim-desenleri-turkce-kaynak](./images/tasarim-desenleri-turkce-kaynak-2.png)
 
 ---
