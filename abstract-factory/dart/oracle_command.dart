@@ -7,5 +7,6 @@ final class OracleCommand implements Command {
   void executeCommand(String query) {
     // Gelen sorgunun çalıştırılması için
     // Gerekli operasyonel işlemler...
+    print('OracleCommand: $query');
   }
 }

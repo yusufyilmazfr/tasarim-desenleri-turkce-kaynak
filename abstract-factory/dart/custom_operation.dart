@@ -3,11 +3,12 @@ import 'connection.dart';
 import 'i_database_factory.dart';
 
 final class CustomOperation {
-  final IDatabaseFactory _databaseFactory;
+  late final IDatabaseFactory _databaseFactory;
   late final Connection _connection;
   late final Command _command;
 
-  CustomOperation(this._databaseFactory) {
+  CustomOperation(IDatabaseFactory databaseFactory) {
+    _databaseFactory = databaseFactory;
     _command = _databaseFactory.createCommand();
     _connection = _databaseFactory.createConnection();
   }
