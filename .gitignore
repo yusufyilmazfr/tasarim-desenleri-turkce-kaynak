@@ -141,3 +141,9 @@ cython_debug/
 
 #OS
 .DS_Store
+
+#Dart
+.dart_tool/
+analysis_options.yaml
+pubspec.lock
+pubspec.yaml

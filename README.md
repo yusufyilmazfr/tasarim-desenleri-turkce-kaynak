@@ -983,8 +983,8 @@ class Lesson
 {
     public int id;
     public string name;
-    public string price;
-    public string discountedPrice;
+    public double price;
+    public double discountedPrice;
     public bool discountApplied;
     public string lessonNote;
 }
